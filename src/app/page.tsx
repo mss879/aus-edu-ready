@@ -1,18 +1,12 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence, useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Globe, GraduationCap, Building2, Users, Target, Plane, FileCheck, ArrowRight, MapPin, Phone, Calendar, ArrowUpRight, Search, Plus, ShieldCheck, Briefcase } from "lucide-react";
+import { CheckCircle, Globe, GraduationCap, Building2, Users, Target, Plane, FileCheck, ArrowRight, MapPin, Phone, Calendar, ArrowUpRight, Search, Plus, ShieldCheck, Briefcase, ClipboardCheck, Check } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-
-const testimonials = [
-  { name: "Sarah M.", role: "Masters in Data Science", uni: "Monash University", text: "The entire process was so smooth. They handled my university application and visa flawlessly." },
-  { name: "David K.", role: "BSc Computer Science", uni: "RMIT University", text: "From IELTS prep to finding my first apartment in Melbourne, AEC was there every step." },
-  { name: "Amaya P.", role: "Master of Nursing", uni: "Deakin University", text: "Their knowledge of the PR pathways completely changed my study strategy for the better." },
-  { name: "Ruwan J.", role: "Dependent Visa", uni: "Partner Setup", text: "Successfully got my wife's dependent visa approved in record time. Highly recommend!" }
-];
+import { TestimonialsMarquee } from "@/components/ui/testimonials-marquee";
 
 export default function Home() {
   const [activeStep, setActiveStep] = useState(0);
@@ -26,9 +20,18 @@ export default function Home() {
     if (!isProcessInView || isProcessPaused) return;
     const timer = setInterval(() => {
       setActiveStep((prev) => (prev + 1) % 5);
-    }, 5000);
+    }, 4000);
     return () => clearInterval(timer);
   }, [isProcessInView, isProcessPaused]);
+
+  // Our Process — five guided stages (facts sourced from the AEC content document)
+  const processSteps = [
+    { icon: ClipboardCheck, title: "FREE Assessment & Counseling", tag: "100% Free", desc: "We evaluate your academic background, budget and career goals, then map the destinations and courses that fit you best." },
+    { icon: GraduationCap, title: "University Selection & Application", tag: "100+ Partners", desc: "We shortlist the right universities and colleges and manage your entire application — paperwork, offers and liaison with institutions." },
+    { icon: ShieldCheck, title: "Visa Processing & Documentation", tag: "95% Success", desc: "Our MARA-registered agents prepare and lodge your visa in full compliance with Department of Home Affairs requirements." },
+    { icon: Plane, title: "Pre-Departure & Travel Assistance", tag: "Included", desc: "Before you fly we arrange airline ticketing, airport pickup and accommodation, and brief you for life in your new country." },
+    { icon: Briefcase, title: "Settlement & Career Support", tag: "Through to PR", desc: "After arrival we help with accommodation, part-time jobs and settling in — then guide your path to career placement and PR." },
+  ];
 
   return (
     <div className="flex flex-col w-full">
@@ -591,183 +594,174 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. How We Help You -> Animated Interactive Timeline */}
-      <section ref={processRef} className="py-24 bg-[#E4EDFB] relative overflow-hidden">
-        <div className="container mx-auto px-4 lg:px-6 xl:px-8 max-w-6xl">
-          <div className="flex flex-col items-center text-center mb-16">
-            <span className="text-xs font-bold text-[#e31b23] tracking-widest uppercase mb-4 border border-[#e31b23]/20 px-3 py-1 rounded-full bg-[#e31b23]/5">OUR PROCESS</span>
-            <h2 className="text-4xl md:text-[2.75rem] font-medium tracking-tight text-[#11181C] leading-[1.1] mb-4">
-              How We Help You<br />Through Every Stage
+      {/* 4. Our Process -> Animated journey stepper (navy band) */}
+      <section ref={processRef} className="py-24 lg:py-28 bg-[#0c3463] relative overflow-hidden">
+        {/* Ambient glow + grid */}
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_60%_50%_at_85%_0%,rgba(29,111,212,0.35)_0%,transparent_60%),radial-gradient(ellipse_50%_40%_at_5%_100%,rgba(227,27,35,0.18)_0%,transparent_60%)]" />
+        <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_40%,#000_50%,transparent_100%)]" />
+
+        <div className="container mx-auto px-4 lg:px-6 xl:px-8 max-w-6xl relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col items-center text-center mb-16 lg:mb-20"
+          >
+            <span className="text-xs font-bold text-white tracking-widest uppercase mb-4 border border-[#e31b23]/50 px-3 py-1 rounded-full bg-[#e31b23]/20">Our Process</span>
+            <h2 className="text-4xl md:text-[2.75rem] font-semibold tracking-tight text-white leading-[1.1] mb-4">
+              Five Steps From First<br className="hidden md:block" /> Call to PR
             </h2>
-          </div>
+            <p className="text-blue-100/70 max-w-xl text-lg">
+              One team handles every stage — so nothing falls through the cracks between assessment and arrival.
+            </p>
+          </motion.div>
 
-          <div className="flex flex-col md:flex-row gap-12 lg:gap-24 relative">
-
-            {/* Left Column: Interactive Timeline Navigation */}
-            <div className="md:w-1/3 relative">
-              {/* Vertical Line */}
-              <div className="absolute left-[39px] top-[40px] bottom-[40px] w-[2px] bg-slate-200 rounded-full hidden md:block z-0"></div>
-
-              <div className="flex flex-col gap-2 relative z-10">
-                {[
-                  { title: "Assessment", id: 0 },
-                  { title: "Application", id: 1 },
-                  { title: "Visa Processing", id: 2 },
-                  { title: "Pre-Departure", id: 3 },
-                  { title: "Settlement", id: 4 }
-                ].map((step, i) => {
-                  const isActive = activeStep === i;
-                  return (
-                    <button
-                      key={i}
-                      onClick={() => {
-                        setActiveStep(i);
-                        setIsProcessPaused(true);
-                      }}
-                      className={`flex items-center gap-6 p-4 rounded-2xl transition-all duration-300 text-left relative z-10 ${isActive ? 'bg-white shadow-md shadow-slate-200/50 border border-slate-100' : 'hover:bg-slate-100 opacity-70 hover:opacity-100'}`}
-                    >
-                      <div className={`w-12 h-12 rounded-full flex items-center justify-center shrink-0 transition-colors duration-300 ${isActive ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30' : 'bg-slate-200 text-slate-500'}`}>
-                        <span className="font-bold text-sm">0{i + 1}</span>
-                      </div>
-                      <div className={`font-semibold text-lg transition-colors duration-300 ${isActive ? 'text-blue-600' : 'text-[#11181C]'}`}>
-                        {step.title}
-                      </div>
-                      {isActive && (
-                        <motion.div
-                          layoutId="activeIndicator"
-                          className="absolute left-0 w-1 h-12 bg-blue-600 rounded-r-full hidden md:block"
-                          transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                        />
-                      )}
-                    </button>
-                  );
-                })}
-              </div>
+          {/* ── Desktop: horizontal stepper ── */}
+          <div className="hidden lg:block relative">
+            {/* progress track between first & last node centres */}
+            <div className="absolute top-7 left-[10%] right-[10%] h-[3px] bg-white/15 rounded-full overflow-hidden">
+              <motion.div
+                className="h-full bg-gradient-to-r from-[#1d6fd4] to-[#e31b23] rounded-full"
+                animate={{ width: `${(activeStep / (processSteps.length - 1)) * 100}%` }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+              />
             </div>
 
-            {/* Right Column: Animated Display Area */}
-            <div className="md:w-2/3 flex items-center">
-              <div className="w-full bg-[#11181C] rounded-[2rem] shadow-2xl min-h-[500px] h-[500px] relative overflow-hidden flex flex-col group">
+            {/* nodes */}
+            <div className="grid grid-cols-5 relative z-10">
+              {processSteps.map((step, i) => {
+                const isActive = activeStep === i;
+                const isDone = i < activeStep;
+                return (
+                  <div key={i} className="flex justify-center">
+                    <button
+                      onClick={() => { setActiveStep(i); setIsProcessPaused(true); }}
+                      aria-label={step.title}
+                      className={`relative w-14 h-14 rounded-full flex items-center justify-center font-black text-sm transition-all duration-300 ${
+                        isActive
+                          ? "bg-white text-[#0c3463] scale-110 shadow-[0_0_30px_rgba(255,255,255,0.4)]"
+                          : isDone
+                          ? "bg-[#1d6fd4] text-white"
+                          : "bg-white/10 text-white/50 border border-white/20 hover:bg-white/20"
+                      }`}
+                    >
+                      {isActive && (
+                        <motion.span
+                          className="absolute inset-0 rounded-full border-2 border-[#e31b23]"
+                          animate={{ scale: [1, 1.45], opacity: [0.7, 0] }}
+                          transition={{ duration: 1.8, repeat: Infinity, ease: "easeOut" }}
+                        />
+                      )}
+                      {isDone ? <Check className="w-6 h-6" strokeWidth={3} /> : `0${i + 1}`}
+                    </button>
+                  </div>
+                );
+              })}
+            </div>
 
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={activeStep}
-                    initial={{ opacity: 0, scale: 1.05 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                    className="absolute inset-0 w-full h-full"
+            {/* cards */}
+            <motion.div
+              className="grid grid-cols-5 gap-4 mt-10 items-start"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+              variants={{ visible: { transition: { staggerChildren: 0.12 } } }}
+            >
+              {processSteps.map((step, i) => {
+                const isActive = activeStep === i;
+                const Icon = step.icon;
+                return (
+                  <motion.button
+                    key={i}
+                    onClick={() => { setActiveStep(i); setIsProcessPaused(true); }}
+                    variants={{ hidden: { opacity: 0, y: 26 }, visible: { opacity: 1, y: 0 } }}
+                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                    className={`text-left rounded-2xl p-5 border-t-4 transition-all duration-300 ${
+                      isActive
+                        ? "bg-white border-[#e31b23] -translate-y-2 shadow-[0_24px_45px_rgba(0,0,0,0.35)]"
+                        : "bg-white/[0.06] border-transparent hover:bg-white/[0.1]"
+                    }`}
                   >
-                    {[
-                      { title: "Assessment & Counseling", desc: "We start with a FREE Assessment & Counseling session to find your perfect fit. We evaluate your background, financial capacity, and career goals to suggest the best paths forward.", image: "/stage1.png" },
-                      { title: "University Selection & Application", desc: "Once we map out your pathway, we handle the University Selection & Application processing. We meticulously manage the paperwork and liaise directly with institutions on your behalf.", image: "/stage2.png" },
-                      { title: "Visa Processing & Documentation", desc: "Benefit from expert handling of all Visa Processing & Documentation. Our MARA agents ensure strict compliance with all Department of Home Affairs requirements for a successful outcome.", image: "/stage3.png" },
-                      { title: "Pre-Departure & Travel Assistance", desc: "Your journey starts before you board. Pre-Departure & Travel Assistance is fully included. We book tickets, arrange airport pickups, and prepare you for your new life abroad.", image: "/stage4.png" },
-                      { title: "On-ground Settlement & Career", desc: "We don't abandon you after arrival. Enjoy On-ground Settlement & Career Support. Finding accommodation, part-time jobs, and integrating into a new culture has never been easier.", image: "/stage5.png" }
-                    ].filter((_, i) => i === activeStep).map((stage, idx) => (
-                      <div key={idx} className="absolute inset-0 w-full h-full flex flex-col justify-end">
-                        <Image src={stage.image} alt={stage.title} fill className="object-cover" priority />
+                    <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-4 transition-colors ${isActive ? "bg-[#e31b23] text-white" : "bg-white/10 text-blue-200"}`}>
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <span className={`inline-block text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded mb-2 ${isActive ? "bg-[#124b8d]/10 text-[#124b8d]" : "bg-white/10 text-blue-200"}`}>
+                      {step.tag}
+                    </span>
+                    <h3 className={`font-bold text-[15px] leading-snug mb-2 ${isActive ? "text-[#0c3463]" : "text-white"}`}>
+                      {step.title}
+                    </h3>
+                    <p className={`text-[13px] leading-relaxed ${isActive ? "text-slate-600" : "text-blue-100/55"}`}>
+                      {step.desc}
+                    </p>
+                  </motion.button>
+                );
+              })}
+            </motion.div>
+          </div>
 
-                        {/* Premium Gradient Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/70 to-transparent z-10" />
-
-                        <div className="relative z-20 p-8 md:p-12 text-white w-full">
-                          <div className="text-xs font-bold text-blue-400 tracking-widest uppercase mb-4 border border-blue-400/30 px-3 py-1 rounded-full w-fit bg-blue-400/10 backdrop-blur-md">Stage 0{activeStep + 1}</div>
-                          <h3 className="text-3xl md:text-4xl font-medium text-white mb-4 leading-tight">{stage.title}</h3>
-                          <p className="text-white/80 text-lg leading-relaxed max-w-xl mb-6">
-                            {stage.desc}
-                          </p>
+          {/* ── Mobile / tablet: vertical stepper ── */}
+          <div className="lg:hidden relative">
+            <div className="absolute left-[27px] top-6 bottom-6 w-[2px] bg-white/15" />
+            <div className="flex flex-col gap-4">
+              {processSteps.map((step, i) => {
+                const isActive = activeStep === i;
+                const Icon = step.icon;
+                return (
+                  <motion.button
+                    key={i}
+                    onClick={() => { setActiveStep(i); setIsProcessPaused(true); }}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-60px" }}
+                    transition={{ duration: 0.45, delay: i * 0.08 }}
+                    className="relative flex gap-4 text-left items-start"
+                  >
+                    <div className={`relative z-10 w-14 h-14 shrink-0 rounded-full flex items-center justify-center font-black text-sm transition-all duration-300 ${isActive ? "bg-white text-[#0c3463] shadow-[0_0_24px_rgba(255,255,255,0.35)]" : "bg-white/10 text-white/60 border border-white/20"}`}>
+                      {i < activeStep ? <Check className="w-6 h-6" strokeWidth={3} /> : `0${i + 1}`}
+                    </div>
+                    <div className={`flex-1 rounded-2xl p-5 border-t-4 transition-all duration-300 ${isActive ? "bg-white border-[#e31b23] shadow-xl" : "bg-white/[0.06] border-transparent"}`}>
+                      <div className="flex items-center gap-2 mb-2">
+                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${isActive ? "bg-[#e31b23] text-white" : "bg-white/10 text-blue-200"}`}>
+                          <Icon className="w-4 h-4" />
                         </div>
+                        <span className={`text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded ${isActive ? "bg-[#124b8d]/10 text-[#124b8d]" : "bg-white/10 text-blue-200"}`}>{step.tag}</span>
                       </div>
-                    ))}
-                  </motion.div>
-                </AnimatePresence>
-
-                {/* Progress Indicators at bottom of card */}
-                <div className="absolute bottom-8 left-8 md:left-12 flex gap-2 z-30">
-                  {[0, 1, 2, 3, 4].map((i) => (
-                    <div key={i} className={`h-1.5 rounded-full transition-all duration-500 ${activeStep === i ? 'w-12 bg-blue-500' : 'w-4 bg-white/30'}`}></div>
-                  ))}
-                </div>
-              </div>
+                      <h3 className={`font-bold text-base mb-1.5 ${isActive ? "text-[#0c3463]" : "text-white"}`}>{step.title}</h3>
+                      <p className={`text-sm leading-relaxed ${isActive ? "text-slate-600" : "text-blue-100/60"}`}>{step.desc}</p>
+                    </div>
+                  </motion.button>
+                );
+              })}
             </div>
           </div>
 
           <div className="flex justify-center mt-16">
-            <Link href="/services" className="inline-flex items-center justify-center border-2 border-slate-200 hover:border-[#11181C] text-[#11181C] rounded-full px-8 py-3 text-sm font-medium transition-colors">
+            <Link href="/services" className="inline-flex items-center justify-center bg-white text-[#0c3463] hover:bg-blue-50 rounded-full px-8 py-3.5 text-sm font-bold transition-colors shadow-lg">
               See Our Complete Services
             </Link>
           </div>
         </div>
       </section>
 
-      {/* 5. Success Stories -> "Real Results" Split View */}
-      <section className="py-24 bg-[#E4EDFB]">
-        <div className="container mx-auto px-4 lg:px-6 xl:px-8 max-w-6xl">
-          <div className="text-center mb-16">
+      {/* 5. Success Stories -> Infinite 2-row testimonial marquee */}
+      <section className="py-24 bg-[#E4EDFB] overflow-hidden">
+        <div className="container mx-auto px-4 lg:px-6 xl:px-8 max-w-7xl">
+          <div className="flex flex-col items-center text-center mb-14">
+            <span className="text-xs font-bold text-[#e31b23] tracking-widest uppercase mb-4 border border-[#e31b23]/20 px-3 py-1 rounded-full bg-[#e31b23]/5">Success Stories</span>
             <h2 className="text-4xl md:text-[2.75rem] font-medium tracking-tight text-[#11181C] leading-[1.1]">
-              Real Results of Students<br />Achieving Their Goals
+              Real Results from<br />Real Students
             </h2>
           </div>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            {[
-              { name: "Sarah M.", role: "Master of IT", uni: "Monash University", text: "The team made my application process seamless. The post-arrival support was incredible!" },
-              { name: "David K.", role: "B. Engineering", uni: "RMIT", text: "From finding the right course to securing my visa, AEC was there every step of the way." }
-            ].map((t, i) => (
-              <div key={i} className="bg-white rounded-[2rem] p-4 flex flex-col md:flex-row gap-6 border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-full md:w-48 h-48 bg-slate-900 rounded-3xl flex items-center justify-center p-6 relative overflow-hidden shrink-0">
-                  <div className="absolute inset-0 bg-blue-600/20 mix-blend-overlay"></div>
-                  <p className="text-white font-serif text-lg leading-tight relative z-10">"{t.text.substring(0, 40)}..."</p>
-                </div>
-                <div className="flex-1 py-4 pr-4 flex flex-col justify-between">
-                  <p className="text-[#11181C] text-sm leading-relaxed mb-6">"{t.text}"</p>
-                  <div className="flex items-center justify-between border-t border-slate-100 pt-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center font-bold text-slate-700">{t.name.charAt(0)}</div>
-                      <div>
-                        <div className="text-sm font-semibold text-[#11181C]">{t.name}</div>
-                        <div className="text-xs text-slate-500">{t.role}</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+        <TestimonialsMarquee />
 
-          {/* Hidden on mobile, show 2 more on desktop */}
-          <div className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            {[
-              { name: "Amaya P.", role: "Nursing", uni: "Deakin University", text: "Their visa expertise is unmatched. I got my approval within weeks with zero hassle." },
-              { name: "Ruwan J.", role: "MBA", uni: "University of Sydney", text: "The PR pathway guidance they provided changed my life trajectory in Australia completely." }
-            ].map((t, i) => (
-              <div key={i} className="bg-white rounded-[2rem] p-4 flex flex-col md:flex-row gap-6 border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-full md:w-48 h-48 bg-slate-900 rounded-3xl flex items-center justify-center p-6 relative overflow-hidden shrink-0">
-                  <div className="absolute inset-0 bg-blue-600/20 mix-blend-overlay"></div>
-                  <p className="text-white font-serif text-lg leading-tight relative z-10">"{t.text.substring(0, 40)}..."</p>
-                </div>
-                <div className="flex-1 py-4 pr-4 flex flex-col justify-between">
-                  <p className="text-[#11181C] text-sm leading-relaxed mb-6">"{t.text}"</p>
-                  <div className="flex items-center justify-between border-t border-slate-100 pt-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center font-bold text-slate-700">{t.name.charAt(0)}</div>
-                      <div>
-                        <div className="text-sm font-semibold text-[#11181C]">{t.name}</div>
-                        <div className="text-xs text-slate-500">{t.role}</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="flex justify-center">
-            <Link href="/contact#testimonials" className="inline-flex items-center justify-center bg-[#11181C] text-white rounded-full px-8 py-3 text-sm font-medium transition-colors hover:bg-black">
-              Read More Success Stories
-            </Link>
-          </div>
+        <div className="flex justify-center mt-14">
+          <Link href="/contact#testimonials" className="inline-flex items-center justify-center bg-[#124b8d] text-white rounded-full px-8 py-3 text-sm font-semibold transition-colors hover:bg-[#0c3463]">
+            Read More Success Stories
+          </Link>
         </div>
       </section>
 

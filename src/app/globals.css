@@ -112,3 +112,42 @@ h6 {
 .animate-marquee:hover {
   animation-play-state: paused;
 }
+
+/* ── Infinite testimonial marquee (two rows, opposite directions) ── */
+@keyframes marquee-rtl {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes marquee-ltr {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  flex-wrap: nowrap;
+}
+
+.animate-marquee-rtl {
+  animation: marquee-rtl 44s linear infinite;
+}
+
+.animate-marquee-ltr {
+  animation: marquee-ltr 38s linear infinite;
+}
+
+.marquee-row:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-rtl,
+  .animate-marquee-ltr { animation: none; }
+}

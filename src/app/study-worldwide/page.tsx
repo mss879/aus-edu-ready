@@ -112,19 +112,26 @@ export default function StudyWorldwidePortal() {
           {/* Dynamic country Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredCountries.map((country) => (
-              <div 
-                key={country.id} 
-                className="group rounded-2xl overflow-hidden border border-slate-100 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.015)] hover:shadow-[0_12px_30px_rgba(0,0,0,0.05)] hover:-translate-y-0.5 transition-all duration-300 h-full flex flex-col justify-between"
+              <Link
+                href={`/study-worldwide/${country.id}`}
+                key={country.id}
+                className="group rounded-2xl overflow-hidden border border-slate-200/80 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.015)] hover:shadow-[0_14px_34px_rgba(12,52,99,0.10)] hover:-translate-y-1 transition-all duration-300 h-full flex flex-col justify-between"
               >
                 <div>
                   <div className="relative h-44 overflow-hidden">
-                    <img 
-                      src={country.image} 
-                      alt={country.name} 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-lg text-xs font-bold uppercase tracking-wider text-slate-600 border border-slate-200">
-                      {country.region}
+                    {country.image ? (
+                      <img
+                        src={country.image}
+                        alt={country.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center bg-[radial-gradient(ellipse_at_top,#1d6fd4_0%,#124b8d_45%,#0c3463_100%)]">
+                        <span className="text-6xl drop-shadow-lg" aria-hidden>{country.flag}</span>
+                      </div>
+                    )}
+                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-lg text-xs font-bold uppercase tracking-wider text-[#124b8d] border border-white/60 flex items-center gap-1.5">
+                      <span aria-hidden>{country.flag}</span> {country.region}
                     </div>
                   </div>
                   <div className="p-6 space-y-3">
@@ -134,19 +141,19 @@ export default function StudyWorldwidePortal() {
                     <p className="text-slate-500 text-sm font-medium leading-relaxed line-clamp-3">
                       {country.description || country.tagline}
                     </p>
-                    
-                    <div className="bg-[#E4EDFB] border border-slate-100 p-3.5 rounded-xl space-y-2 text-sm text-slate-600 font-semibold">
-                      <div className="flex justify-between"><span>Tuition Cost:</span> <span className="text-[#11181C]">{country.tuitionFees}</span></div>
-                      <div className="flex justify-between"><span>Living Cost:</span> <span className="text-[#11181C]">{country.costOfLiving}</span></div>
+
+                    <div className="bg-[#E4EDFB] border border-[#dbe5f1] p-3.5 rounded-xl space-y-2 text-sm text-slate-600 font-semibold">
+                      <div className="flex justify-between gap-2"><span>Tuition:</span> <span className="text-[#11181C] text-right">{country.tuition}</span></div>
+                      <div className="flex justify-between gap-2"><span>English:</span> <span className="text-[#11181C] text-right">{country.ielts}</span></div>
                     </div>
                   </div>
                 </div>
                 <div className="p-6 pt-0">
-                  <Link href={`/study-worldwide/${country.id}`} className="inline-flex items-center text-sm font-bold uppercase tracking-wider text-[#124b8d] hover:text-[#0e3d72] transition-colors gap-1 group-link">
-                    Check Eligibility <ArrowUpRight className="w-4 h-4" />
-                  </Link>
+                  <span className="inline-flex items-center text-sm font-bold uppercase tracking-wider text-[#124b8d] group-hover:text-[#e31b23] transition-colors gap-1">
+                    Explore Destination <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

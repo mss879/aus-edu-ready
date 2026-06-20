@@ -125,7 +125,7 @@ export default function Contact() {
       </section>
 
       {/* Booking Form & Contact block */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white" id="consultation">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             
