@@ -87,7 +87,7 @@ export default function AustralianSchoolSectorPortal() {
       </section>
 
       {/* Directory Bento Grid */}
-      <section className="py-24 bg-[#FAF8F5] border-y border-slate-200">
+      <section className="py-24 bg-[#E4EDFB] border-y border-slate-200">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-wider mb-3">

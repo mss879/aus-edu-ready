@@ -34,13 +34,24 @@ export default function Home() {
     <div className="flex flex-col w-full">
       {/* 1. Hero Section */}
       <section className="relative w-full min-h-[600px] lg:min-h-[80vh] pt-32 pb-20 flex flex-col justify-center bg-white overflow-hidden">
+        {/* Soft brand-blue + red wash so the hero never reads as a flat white void */}
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_75%_60%_at_12%_12%,#e7f0fc_0%,transparent_55%),radial-gradient(ellipse_55%_45%_at_95%_92%,#fdebec_0%,transparent_55%)]" />
         {/* Decorative Grid Background */}
-        <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
+        <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#e3edf9_1px,transparent_1px),linear-gradient(to_bottom,#e3edf9_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
 
         <div className="w-full px-4 lg:px-6 xl:px-8 relative z-10 flex-1 flex items-center">
           <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             {/* Left Content (Text) */}
             <div className="flex-1 w-full max-w-2xl lg:max-w-3xl pt-12 lg:pt-0">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="inline-flex items-center gap-2.5 mb-6 rounded-full bg-white border border-[#dbe5f1] shadow-sm pl-2 pr-4 py-1.5"
+              >
+                <span className="inline-flex items-center rounded-full bg-[#e31b23] px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider text-white">1st in Sri Lanka</span>
+                <span className="text-[13px] font-bold text-[#124b8d]">MARA-Registered · 20+ Years</span>
+              </motion.div>
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -200,69 +211,14 @@ export default function Home() {
 
       </section>
 
-      {/* 1.5. Trust Stats Section */}
-      <section className="w-full bg-white pb-16 relative z-20">
-        <div className="container mx-auto px-4 lg:px-6 xl:px-8">
-          <div className="flex flex-wrap justify-center gap-4 lg:gap-6">
-            {/* Card 1: 20+ Years Experience */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: 0.1 }}
-              className="group relative bg-[#FAF9F6] rounded-[24px] px-6 py-5 border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 flex-1 min-w-[160px] max-w-[220px] flex flex-col items-center text-center cursor-default"
-            >
-              <div className="text-4xl font-semibold text-[#11181C] mb-1 tracking-tight group-hover:text-blue-600 transition-colors duration-300">20+</div>
-              <div className="text-slate-500 font-bold text-[10px] sm:text-xs uppercase tracking-widest leading-normal">Years Experience</div>
-            </motion.div>
-
-            {/* Card 2: PIER Qualified Agents */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: 0.2 }}
-              className="group relative bg-[#FAF9F6] rounded-[24px] px-6 py-5 border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 flex-1 min-w-[160px] max-w-[220px] flex flex-col items-center text-center cursor-default"
-            >
-              <div className="text-4xl font-semibold text-[#11181C] mb-1 tracking-tight group-hover:text-blue-600 transition-colors duration-300">PIER</div>
-              <div className="text-slate-500 font-bold text-[10px] sm:text-xs uppercase tracking-widest leading-normal">Qualified Agents</div>
-            </motion.div>
-
-            {/* Card 3: MARA Registered */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: 0.3 }}
-              className="group relative bg-[#FAF9F6] rounded-[24px] px-6 py-5 border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 flex-1 min-w-[160px] max-w-[220px] flex flex-col items-center text-center cursor-default"
-            >
-              <div className="text-4xl font-semibold text-[#11181C] mb-1 tracking-tight group-hover:text-blue-600 transition-colors duration-300">MARA</div>
-              <div className="text-slate-500 font-bold text-[10px] sm:text-xs uppercase tracking-widest leading-normal">Registered</div>
-            </motion.div>
-
-            {/* Card 4: 4 Global Offices */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: 0.4 }}
-              className="group relative bg-[#FAF9F6] rounded-[24px] px-6 py-5 border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 flex-1 min-w-[160px] max-w-[220px] flex flex-col items-center text-center cursor-default"
-            >
-              <div className="text-4xl font-semibold text-[#11181C] mb-1 tracking-tight group-hover:text-blue-600 transition-colors duration-300">4</div>
-              <div className="text-slate-500 font-bold text-[10px] sm:text-xs uppercase tracking-widest leading-normal">Global Offices</div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
       {/* 2. Why We're Different (Restored Bento Grid Layout) */}
-      <section className="py-24 bg-[#FAF8F5] overflow-hidden">
+      <section className="py-24 bg-[#E4EDFB] overflow-hidden">
         <div className="container mx-auto px-4 lg:px-6 xl:px-8 max-w-7xl">
           <div className="flex flex-col items-center text-center mb-16">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-[1px] bg-blue-600"></div>
-              <span className="text-xs font-bold text-blue-600 tracking-widest uppercase">Why Us</span>
-              <div className="w-8 h-[1px] bg-blue-600"></div>
+              <div className="w-8 h-[2px] bg-[#e31b23]"></div>
+              <span className="text-xs font-bold text-[#e31b23] tracking-widest uppercase">Why Us</span>
+              <div className="w-8 h-[2px] bg-[#e31b23]"></div>
             </div>
             <h2 className="text-4xl md:text-[2.75rem] font-medium tracking-tight text-[#11181C] leading-[1.1] mb-6">
               Why We're Different From <br className="hidden md:block" /> Other Education Agents
@@ -274,7 +230,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto">
             {/* 1. First MARA Agent */}
-            <div className="md:col-span-1 bg-[#FAF9F6] rounded-[32px] border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 flex flex-col group overflow-hidden">
+            <div className="md:col-span-1 bg-[#F4F8FD] rounded-[32px] border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 flex flex-col group overflow-hidden">
               <div className="p-8 pb-0">
                 <h3 className="text-2xl font-medium text-[#11181C] mb-3 leading-tight">First MARA Agent</h3>
                 <p className="text-slate-500 text-sm mb-8 leading-relaxed">
@@ -303,7 +259,7 @@ export default function Home() {
             </div>
 
             {/* 2. 4 Global Offices */}
-            <div className="md:col-span-1 bg-[#FAF9F6] rounded-[32px] p-8 border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 flex flex-col group overflow-hidden">
+            <div className="md:col-span-1 bg-[#F4F8FD] rounded-[32px] p-8 border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 flex flex-col group overflow-hidden">
               <h3 className="text-2xl font-medium text-[#11181C] mb-3 leading-tight">4 Global Offices</h3>
               <p className="text-slate-500 text-sm mb-8 leading-relaxed">
                 Melbourne, Adelaide, Colombo &amp; Dubai - providing 24/7 support across multiple time zones.
@@ -324,29 +280,29 @@ export default function Home() {
                 <div className="relative w-full h-full flex items-center justify-center">
                   <div className="relative z-20 transition-transform duration-300 group-hover:scale-105">
                     {/* Pulsing ring background */}
-                    <div className="absolute inset-0 bg-[#10b981]/20 rounded-full animate-ping opacity-75 scale-110"></div>
+                    <div className="absolute inset-0 bg-[#124b8d]/20 rounded-full animate-ping opacity-75 scale-110"></div>
                     <div className="w-14 h-14 bg-[#11181C] rounded-full flex items-center justify-center shadow-xl shadow-black/20 relative z-10 border border-slate-800">
-                      <Globe className="w-6 h-6 text-[#10b981] animate-pulse" />
+                      <Globe className="w-6 h-6 text-[#124b8d] animate-pulse" />
                     </div>
                   </div>
                   <svg className="absolute inset-0 w-full h-full z-10" fill="none" strokeWidth="2">
-                    <line x1="50%" y1="50%" x2="25%" y2="20%" className="stroke-[#10b981]/40 animate-connection" />
-                    <line x1="50%" y1="50%" x2="75%" y2="25%" className="stroke-[#10b981]/40 animate-connection" />
-                    <line x1="50%" y1="50%" x2="25%" y2="80%" className="stroke-[#10b981]/40 animate-connection" />
-                    <line x1="50%" y1="50%" x2="75%" y2="75%" className="stroke-[#10b981]/40 animate-connection" />
+                    <line x1="50%" y1="50%" x2="25%" y2="20%" className="stroke-[#124b8d]/40 animate-connection" />
+                    <line x1="50%" y1="50%" x2="75%" y2="25%" className="stroke-[#124b8d]/40 animate-connection" />
+                    <line x1="50%" y1="50%" x2="25%" y2="80%" className="stroke-[#124b8d]/40 animate-connection" />
+                    <line x1="50%" y1="50%" x2="75%" y2="75%" className="stroke-[#124b8d]/40 animate-connection" />
                   </svg>
 
                   {/* Melbourne Capsule */}
                   <div className="absolute top-[20%] left-[25%] -translate-x-1/2 -translate-y-1/2 z-30">
-                    <div className="h-9 px-2.5 rounded-full bg-white border border-slate-200/80 shadow-[0_4px_12px_rgba(0,0,0,0.05)] flex items-center gap-2 group/node cursor-default transition-transform duration-300 hover:-translate-y-1 hover:border-[#10b981] hover:shadow-[0_6px_16px_rgba(16,185,129,0.1)]">
+                    <div className="h-9 px-2.5 rounded-full bg-white border border-slate-200/80 shadow-[0_4px_12px_rgba(0,0,0,0.05)] flex items-center gap-2 group/node cursor-default transition-transform duration-300 hover:-translate-y-1 hover:border-[#124b8d] hover:shadow-[0_6px_16px_rgba(18,75,141,0.1)]">
                       <div className="w-6 h-6 rounded-full overflow-hidden relative shrink-0 border border-slate-100 shadow-sm">
                         <Image src="/office_melbourne.png" alt="Melbourne" fill className="object-cover group-hover/node:scale-110 transition-transform duration-500" />
                       </div>
                       <div className="flex items-center gap-1.5 pr-0.5">
                         <span className="text-slate-800 text-[10px] font-bold tracking-wider">MELBOURNE</span>
                         <span className="relative flex h-1.5 w-1.5 shrink-0">
-                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-50"></span>
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-blue-100"></span>
                         </span>
                       </div>
                     </div>
@@ -354,15 +310,15 @@ export default function Home() {
 
                   {/* Adelaide Capsule */}
                   <div className="absolute top-[25%] left-[75%] -translate-x-1/2 -translate-y-1/2 z-30">
-                    <div className="h-9 px-2.5 rounded-full bg-white border border-slate-200/80 shadow-[0_4px_12px_rgba(0,0,0,0.05)] flex items-center gap-2 group/node cursor-default transition-transform duration-300 hover:translate-y-1 hover:border-[#10b981] hover:shadow-[0_6px_16px_rgba(16,185,129,0.1)]">
+                    <div className="h-9 px-2.5 rounded-full bg-white border border-slate-200/80 shadow-[0_4px_12px_rgba(0,0,0,0.05)] flex items-center gap-2 group/node cursor-default transition-transform duration-300 hover:translate-y-1 hover:border-[#124b8d] hover:shadow-[0_6px_16px_rgba(18,75,141,0.1)]">
                       <div className="w-6 h-6 rounded-full overflow-hidden relative shrink-0 border border-slate-100 shadow-sm">
                         <Image src="/office_adelaide.png" alt="Adelaide" fill className="object-cover group-hover/node:scale-110 transition-transform duration-500" />
                       </div>
                       <div className="flex items-center gap-1.5 pr-0.5">
                         <span className="text-slate-800 text-[10px] font-bold tracking-wider">ADELAIDE</span>
                         <span className="relative flex h-1.5 w-1.5 shrink-0">
-                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-50"></span>
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-blue-100"></span>
                         </span>
                       </div>
                     </div>
@@ -370,15 +326,15 @@ export default function Home() {
 
                   {/* Colombo Capsule */}
                   <div className="absolute top-[80%] left-[25%] -translate-x-1/2 -translate-y-1/2 z-30">
-                    <div className="h-9 px-2.5 rounded-full bg-white border border-slate-200/80 shadow-[0_4px_12px_rgba(0,0,0,0.05)] flex items-center gap-2 group/node cursor-default transition-transform duration-300 hover:-translate-y-0.5 hover:border-[#10b981] hover:shadow-[0_6px_16px_rgba(16,185,129,0.1)]">
+                    <div className="h-9 px-2.5 rounded-full bg-white border border-slate-200/80 shadow-[0_4px_12px_rgba(0,0,0,0.05)] flex items-center gap-2 group/node cursor-default transition-transform duration-300 hover:-translate-y-0.5 hover:border-[#124b8d] hover:shadow-[0_6px_16px_rgba(18,75,141,0.1)]">
                       <div className="w-6 h-6 rounded-full overflow-hidden relative shrink-0 border border-slate-100 shadow-sm">
                         <Image src="/office_colombo.png" alt="Colombo" fill className="object-cover group-hover/node:scale-110 transition-transform duration-500" />
                       </div>
                       <div className="flex items-center gap-1.5 pr-0.5">
                         <span className="text-slate-800 text-[10px] font-bold tracking-wider">COLOMBO</span>
                         <span className="relative flex h-1.5 w-1.5 shrink-0">
-                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-50"></span>
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-blue-100"></span>
                         </span>
                       </div>
                     </div>
@@ -386,15 +342,15 @@ export default function Home() {
 
                   {/* Dubai Capsule */}
                   <div className="absolute top-[75%] left-[75%] -translate-x-1/2 -translate-y-1/2 z-30">
-                    <div className="h-9 px-2.5 rounded-full bg-white border border-slate-200/80 shadow-[0_4px_12px_rgba(0,0,0,0.05)] flex items-center gap-2 group/node cursor-default transition-transform duration-300 hover:translate-y-1 hover:border-[#10b981] hover:shadow-[0_6px_16px_rgba(16,185,129,0.1)]">
+                    <div className="h-9 px-2.5 rounded-full bg-white border border-slate-200/80 shadow-[0_4px_12px_rgba(0,0,0,0.05)] flex items-center gap-2 group/node cursor-default transition-transform duration-300 hover:translate-y-1 hover:border-[#124b8d] hover:shadow-[0_6px_16px_rgba(18,75,141,0.1)]">
                       <div className="w-6 h-6 rounded-full overflow-hidden relative shrink-0 border border-slate-100 shadow-sm">
                         <Image src="/office_dubai.png" alt="Dubai" fill className="object-cover group-hover/node:scale-110 transition-transform duration-500" />
                       </div>
                       <div className="flex items-center gap-1.5 pr-0.5">
                         <span className="text-slate-800 text-[10px] font-bold tracking-wider">DUBAI</span>
                         <span className="relative flex h-1.5 w-1.5 shrink-0">
-                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-50"></span>
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-blue-100"></span>
                         </span>
                       </div>
                     </div>
@@ -404,7 +360,7 @@ export default function Home() {
             </div>
 
             {/* 3. Pre-Departure Support */}
-            <div className="md:col-span-1 bg-[#FAF9F6] rounded-[32px] border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 flex flex-col group overflow-hidden min-h-[380px]">
+            <div className="md:col-span-1 bg-[#F4F8FD] rounded-[32px] border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 flex flex-col group overflow-hidden min-h-[380px]">
               <div className="p-8 pb-0">
                 <h3 className="text-2xl font-medium text-[#11181C] mb-3 leading-tight">Pre-Departure Support</h3>
                 <p className="text-slate-500 text-sm mb-8 leading-relaxed">
@@ -435,7 +391,7 @@ export default function Home() {
             </div>
 
             {/* 4. Career Placement & Family Visas */}
-            <div className="md:col-span-2 bg-[#E9EBE2] rounded-[32px] p-8 lg:p-10 border border-[#DCE0D4] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 flex flex-col md:flex-row items-center gap-8 group overflow-hidden">
+            <div className="md:col-span-2 bg-[#E7EFFB] rounded-[32px] p-8 lg:p-10 border border-[#CFE0F5] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 flex flex-col md:flex-row items-center gap-8 group overflow-hidden">
               <div className="flex-1 z-10">
                 <h3 className="text-3xl lg:text-4xl font-medium text-[#11181C] mb-4 leading-tight">
                   Career Placement &amp; Family Visas
@@ -460,14 +416,14 @@ export default function Home() {
                 <div className="absolute right-[45%] top-0 w-44 h-60 rounded-2xl overflow-hidden shadow-2xl -rotate-[6deg] group-hover:-rotate-[12deg] transition-all duration-500 z-10 border border-white/20">
                   <Image src="/why_card2.png" alt="Professional" fill className="object-cover" />
                 </div>
-                <div className="absolute right-[25%] bottom-[15%] w-16 h-16 bg-[#11181C] rounded-full flex items-center justify-center shadow-xl z-20 border-[4px] border-[#E9EBE2] transition-transform duration-300 group-hover:scale-105">
-                  <Target className="w-7 h-7 text-[#10b981]" />
+                <div className="absolute right-[25%] bottom-[15%] w-16 h-16 bg-[#11181C] rounded-full flex items-center justify-center shadow-xl z-20 border-[4px] border-[#E7EFFB] transition-transform duration-300 group-hover:scale-105">
+                  <Target className="w-7 h-7 text-[#124b8d]" />
                 </div>
               </div>
             </div>
 
             {/* 5. Complete Settlement */}
-            <div className="md:col-span-1 bg-[#FAF9F6] rounded-[32px] overflow-hidden relative shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 group flex flex-col border border-slate-100 min-h-[380px]">
+            <div className="md:col-span-1 bg-[#F4F8FD] rounded-[32px] overflow-hidden relative shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 group flex flex-col border border-slate-100 min-h-[380px]">
               <div className="absolute inset-0 z-0">
                 <Image
                   src="/why_settlement.png"
@@ -475,7 +431,7 @@ export default function Home() {
                   fill
                   className="object-cover object-bottom opacity-90 group-hover:scale-105 transition-transform duration-1000"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6] from-40% via-[#FAF9F6]/90 via-60% to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-[#F4F8FD] from-40% via-[#F4F8FD]/90 via-60% to-transparent"></div>
               </div>
               <div className="relative z-10 p-8 flex flex-col h-full">
                 <h3 className="text-2xl font-medium text-[#11181C] mb-3 leading-tight">Complete Settlement</h3>
@@ -561,16 +517,16 @@ export default function Home() {
       </section>
 
       {/* 3. Study Destinations -> "Global Network" Bento Layout */}
-      <section className="py-24 bg-[#FAF8F5]">
+      <section className="py-24 bg-[#E4EDFB]">
         <div className="container mx-auto px-4 lg:px-6 xl:px-8 max-w-7xl">
           <div className="flex justify-between items-end mb-16">
             <div>
-              <span className="text-xs font-bold text-slate-500 tracking-widest uppercase mb-4 block border border-slate-200 px-3 py-1 rounded-full w-fit bg-white">GLOBAL</span>
+              <span className="text-xs font-bold text-[#e31b23] tracking-widest uppercase mb-4 block border border-[#e31b23]/20 px-3 py-1 rounded-full w-fit bg-[#e31b23]/5">GLOBAL</span>
               <h2 className="text-4xl md:text-[2.75rem] font-medium tracking-tight text-[#11181C] leading-[1.1]">
                 Study Destinations <br /> Overview
               </h2>
             </div>
-            <Link href="/destinations" className="hidden md:inline-flex items-center justify-center bg-[#11181C] text-white rounded-full px-8 py-3 text-sm font-medium transition-colors hover:bg-blue-600">
+            <Link href="/study-worldwide" className="hidden md:inline-flex items-center justify-center bg-[#11181C] text-white rounded-full px-8 py-3 text-sm font-medium transition-colors hover:bg-blue-600">
               Explore All 18 Countries
             </Link>
           </div>
@@ -607,13 +563,13 @@ export default function Home() {
             {/* Other Destinations List */}
             <div className="flex flex-col gap-4">
               {[
-                { country: "New Zealand", desc: "World-class education in a safe environment.", image: "/dest_nz.png" },
-                { country: "United Kingdom", desc: "Historic campuses with global recognition.", image: "/dest_uk.png" },
-                { country: "Canada", desc: "High quality of life & clear PR pathways.", image: "/dest_canada.png" },
-                { country: "USA", desc: "Cutting-edge research opportunities.", image: "/dest_usa.png" },
-                { country: "UAE", desc: "Modern innovation blending with culture.", image: "/dest_uae.png" }
+                { country: "New Zealand", slug: "new-zealand", desc: "World-class education in a safe environment.", image: "/dest_nz.png" },
+                { country: "United Kingdom", slug: "uk", desc: "Historic campuses with global recognition.", image: "/dest_uk.png" },
+                { country: "Canada", slug: "canada", desc: "High quality of life & clear PR pathways.", image: "/dest_canada.png" },
+                { country: "USA", slug: "usa", desc: "Cutting-edge research opportunities.", image: "/dest_usa.png" },
+                { country: "UAE", slug: "uae", desc: "Modern innovation blending with culture.", image: "/dest_uae.png" }
               ].map((dest, i) => (
-                <Link key={i} href={`/destinations/${dest.country.toLowerCase().replace(' ', '-')}`} className="bg-white rounded-2xl p-3 border border-slate-100 hover:border-blue-200 hover:shadow-lg hover:shadow-blue-600/5 transition-all duration-300 flex items-center group flex-1">
+                <Link key={i} href={`/study-worldwide/${dest.slug}`} className="bg-white rounded-2xl p-3 border border-slate-100 hover:border-blue-200 hover:shadow-lg hover:shadow-blue-600/5 transition-all duration-300 flex items-center group flex-1">
                   <div className="w-20 h-20 shrink-0 rounded-xl overflow-hidden relative">
                     <Image src={dest.image} alt={dest.country} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
                   </div>
@@ -629,17 +585,17 @@ export default function Home() {
             </div>
           </div>
 
-          <Link href="/destinations" className="md:hidden mt-8 flex w-full items-center justify-center bg-[#11181C] text-white rounded-full px-8 py-3 text-sm font-medium transition-colors hover:bg-blue-600">
+          <Link href="/study-worldwide" className="md:hidden mt-8 flex w-full items-center justify-center bg-[#11181C] text-white rounded-full px-8 py-3 text-sm font-medium transition-colors hover:bg-blue-600">
             Explore All 18 Countries
           </Link>
         </div>
       </section>
 
       {/* 4. How We Help You -> Animated Interactive Timeline */}
-      <section ref={processRef} className="py-24 bg-[#FAF8F5] relative overflow-hidden">
+      <section ref={processRef} className="py-24 bg-[#E4EDFB] relative overflow-hidden">
         <div className="container mx-auto px-4 lg:px-6 xl:px-8 max-w-6xl">
           <div className="flex flex-col items-center text-center mb-16">
-            <span className="text-xs font-bold text-slate-500 tracking-widest uppercase mb-4 border border-slate-200 px-3 py-1 rounded-full bg-white">OUR PROCESS</span>
+            <span className="text-xs font-bold text-[#e31b23] tracking-widest uppercase mb-4 border border-[#e31b23]/20 px-3 py-1 rounded-full bg-[#e31b23]/5">OUR PROCESS</span>
             <h2 className="text-4xl md:text-[2.75rem] font-medium tracking-tight text-[#11181C] leading-[1.1] mb-4">
               How We Help You<br />Through Every Stage
             </h2>
@@ -746,7 +702,7 @@ export default function Home() {
       </section>
 
       {/* 5. Success Stories -> "Real Results" Split View */}
-      <section className="py-24 bg-[#FAF8F5]">
+      <section className="py-24 bg-[#E4EDFB]">
         <div className="container mx-auto px-4 lg:px-6 xl:px-8 max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-[2.75rem] font-medium tracking-tight text-[#11181C] leading-[1.1]">
@@ -808,7 +764,7 @@ export default function Home() {
           </div>
 
           <div className="flex justify-center">
-            <Link href="/success-stories" className="inline-flex items-center justify-center bg-[#11181C] text-white rounded-full px-8 py-3 text-sm font-medium transition-colors hover:bg-black">
+            <Link href="/contact#testimonials" className="inline-flex items-center justify-center bg-[#11181C] text-white rounded-full px-8 py-3 text-sm font-medium transition-colors hover:bg-black">
               Read More Success Stories
             </Link>
           </div>
@@ -820,22 +776,27 @@ export default function Home() {
         <div className="container mx-auto px-4 lg:px-6 xl:px-8 max-w-7xl">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
             <div className="lg:w-[35%]">
-              <span className="text-[11px] font-bold text-slate-500 tracking-[0.2em] uppercase mb-6 block border border-slate-200 px-4 py-1.5 rounded-full w-fit">ADVANTAGE</span>
-              <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] font-normal tracking-tight text-[#11181C] leading-[1.1] mb-10">
+              <span className="text-[11px] font-bold text-[#e31b23] tracking-[0.2em] uppercase mb-6 block border border-[#e31b23]/20 px-4 py-1.5 rounded-full w-fit bg-[#e31b23]/5">THE PROOF</span>
+              <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] font-normal tracking-tight text-[#11181C] leading-[1.1] mb-6">
                 Why Choose<br />AEC
               </h2>
+              <p className="text-slate-500 text-base leading-relaxed mb-8">
+                The credentials and track record behind every student we place — not just promises.
+              </p>
 
-              <div className="bg-white rounded-3xl p-8 mb-6 border border-slate-100 shadow-sm">
-                <div className="text-sm font-semibold text-[#11181C] mb-2">24/7 Support</div>
-                <div className="text-2xl font-medium text-[#11181C] mb-6">+94 77 395 0448</div>
+              {/* Navy trust card adds a strong block of brand colour */}
+              <div className="bg-[#0c3463] rounded-3xl p-8 mb-6 shadow-lg relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-1 bg-[#e31b23]" />
+                <div className="text-xs font-bold text-blue-200 uppercase tracking-widest mb-2">24/7 Support</div>
+                <a href="tel:+94773950448" className="text-2xl font-bold text-white mb-6 block hover:text-[#ff6b6b] transition-colors">+94 77 395 0448</a>
 
-                <div className="w-full h-px bg-slate-200/60 mb-6"></div>
+                <div className="w-full h-px bg-white/15 mb-6"></div>
 
-                <div className="text-xs text-slate-500 mb-1">Send us an email</div>
-                <div className="text-sm font-medium text-[#11181C]">info@aectours.com</div>
+                <div className="text-xs text-blue-200/70 mb-1">Send us an email</div>
+                <a href="mailto:edu@multinational.com.au" className="text-sm font-medium text-white hover:text-[#ff6b6b] transition-colors break-all">edu@multinational.com.au</a>
               </div>
 
-              <Link href="/about" className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white rounded-full px-8 py-4 text-sm font-semibold transition-colors w-full">
+              <Link href="/about" className="inline-flex items-center justify-center bg-[#124b8d] hover:bg-[#0c3463] text-white rounded-full px-8 py-4 text-sm font-semibold transition-colors w-full">
                 Learn More About Us
               </Link>
             </div>
@@ -843,19 +804,19 @@ export default function Home() {
             <div className="lg:w-[65%] mt-8 lg:mt-0">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 border-t border-slate-100">
                 {[
-                  "Pre-departure airline ticketing",
-                  "Airport reception services",
-                  "Accommodation finding",
-                  "Settlement support",
-                  "Part-time job assistance",
-                  "Career placement after studies",
-                  "PR pathway guidance",
-                  "Deep understanding of Australian immigration",
-                  "Direct relationships with Home Affairs",
-                  "FREE qualified migration advice"
+                  "First MARA-registered agent office in Sri Lanka",
+                  "PIER-qualified, certified counselors",
+                  "95% visa success rate",
+                  "2,500+ students successfully placed",
+                  "18 countries served worldwide",
+                  "100+ university & college partners",
+                  "4.9 / 5 average rating from 450+ reviews",
+                  "20+ years of continuous operation",
+                  "ESOS Act & National Code compliant",
+                  "Part of Multinational Holdings — financially stable"
                 ].map((point, i) => (
                   <div key={i} className={`flex items-center gap-4 py-7 ${i >= 8 ? '' : 'border-b border-slate-100'}`}>
-                    <div className="w-5 h-5 rounded-full bg-blue-500 flex items-center justify-center shrink-0">
+                    <div className="w-5 h-5 rounded-full bg-[#124b8d] flex items-center justify-center shrink-0">
                       <CheckCircle size={12} className="text-white" strokeWidth={3} />
                     </div>
                     <span className="text-[#11181C] text-[15px] font-medium leading-relaxed">{point}</span>
@@ -868,10 +829,10 @@ export default function Home() {
       </section>
 
       {/* 7. Latest News -> "Expert Insights" layout */}
-      <section className="py-24 bg-[#FAF8F5]">
+      <section className="py-24 bg-[#E4EDFB]">
         <div className="container mx-auto px-4 lg:px-6 xl:px-8 max-w-7xl">
           <div className="flex flex-col items-center text-center mb-16">
-            <span className="text-xs font-bold text-slate-500 tracking-widest uppercase mb-4 border border-slate-200 px-3 py-1 rounded-full">INSIGHTS</span>
+            <span className="text-xs font-bold text-[#e31b23] tracking-widest uppercase mb-4 border border-[#e31b23]/20 px-3 py-1 rounded-full bg-[#e31b23]/5">INSIGHTS</span>
             <h2 className="text-4xl md:text-[2.75rem] font-medium tracking-tight text-[#11181C] leading-[1.1]">
               Expert-Led Talks & <br className="hidden md:block" /> Latest News
             </h2>

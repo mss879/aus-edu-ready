@@ -82,7 +82,7 @@ export default function PartnerWorkRights() {
       </section>
 
       {/* Comparison table */}
-      <section className="py-24 bg-[#FAF8F5] border-y border-slate-200">
+      <section className="py-24 bg-[#E4EDFB] border-y border-slate-200">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#11181C] leading-[1.1]">

@@ -31,7 +31,7 @@ export default function SchoolAccommodation() {
                 <p className="text-slate-600 text-[15px] leading-relaxed">
                   Students live with a carefully approved and vetted Australian family. Provides absolute safety, emotional warmth, home-cooked meals, and deep English language immersion.
                 </p>
-                <div className="p-4 bg-[#FAF8F5] border border-slate-100 rounded-2xl">
+                <div className="p-4 bg-[#E4EDFB] border border-slate-100 rounded-2xl">
                   <div className="text-xs font-bold text-slate-500 uppercase tracking-wider">Typical Cost:</div>
                   <div className="font-bold text-lg text-[#124b8d] mt-0.5">AUD 280 to 350 / week</div>
                 </div>
@@ -55,7 +55,7 @@ export default function SchoolAccommodation() {
                 <p className="text-slate-600 text-[15px] leading-relaxed">
                   Students live on campus in fully supervised, elite boarding houses. Provides highly structured study routines, peer relationships, and academic tutor assistance.
                 </p>
-                <div className="p-4 bg-[#FAF8F5] border border-slate-100 rounded-2xl">
+                <div className="p-4 bg-[#E4EDFB] border border-slate-100 rounded-2xl">
                   <div className="text-xs font-bold text-slate-500 uppercase tracking-wider">Typical Cost:</div>
                   <div className="font-bold text-lg text-[#e31b23] mt-0.5">AUD 15,000 to 35,000 / year</div>
                 </div>
@@ -79,7 +79,7 @@ export default function SchoolAccommodation() {
                 <p className="text-slate-600 text-[15px] leading-relaxed">
                   One parent accompanies their minor child to Australia on a Student Guardian Visa (Subclass 590), renting private local apartments to provide direct family care.
                 </p>
-                <div className="p-4 bg-[#FAF8F5] border border-slate-100 rounded-2xl">
+                <div className="p-4 bg-[#E4EDFB] border border-slate-100 rounded-2xl">
                   <div className="text-xs font-bold text-slate-500 uppercase tracking-wider">Typical Apartment Rent:</div>
                   <div className="font-bold text-lg text-[#124b8d] mt-0.5">AUD 1,500 to 2,500 / month</div>
                 </div>
@@ -97,7 +97,7 @@ export default function SchoolAccommodation() {
       </section>
 
       {/* Welfare notice */}
-      <section className="py-24 bg-[#FAF8F5] border-t border-slate-200">
+      <section className="py-24 bg-[#E4EDFB] border-t border-slate-200">
         <div className="container mx-auto px-4 max-w-4xl text-center space-y-6">
           <div className="w-12 h-12 rounded-full bg-white border border-slate-200 text-[#e31b23] flex items-center justify-center mx-auto mb-4">
             <ShieldCheck className="w-6 h-6 animate-pulse" />

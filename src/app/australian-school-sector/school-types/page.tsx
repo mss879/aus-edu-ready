@@ -93,7 +93,7 @@ export default function SchoolTypes() {
                   <h3 className="font-bold text-2xl text-[#11181C] leading-tight tracking-tight">{item.type}</h3>
                   <p className="text-slate-600 text-sm leading-relaxed font-medium">{item.text}</p>
                   
-                  <div className="p-4 bg-[#FAF8F5] border border-slate-100 rounded-2xl">
+                  <div className="p-4 bg-[#E4EDFB] border border-slate-100 rounded-2xl">
                     <div className="text-xs font-bold text-slate-500 uppercase tracking-wider">Indicative Tuition:</div>
                     <div className="font-bold text-lg text-[#124b8d] mt-0.5">{item.fee}</div>
                   </div>
@@ -114,7 +114,7 @@ export default function SchoolTypes() {
       </section>
 
       {/* Support callout */}
-      <section className="py-20 bg-[#FAF8F5] overflow-hidden relative border-t border-slate-200">
+      <section className="py-20 bg-[#E4EDFB] overflow-hidden relative border-t border-slate-200">
         <div className="container relative z-10 px-4 mx-auto max-w-4xl text-center space-y-6">
           <h2 className="font-heading text-3xl md:text-5xl font-black text-slate-900 tracking-tight">Unsure Which Sector Fits Your Child?</h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-medium">

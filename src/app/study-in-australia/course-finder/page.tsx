@@ -90,7 +90,7 @@ export default function CourseFinder() {
       </section>
 
       {/* Interactive Wizard Section (Wow Factor Feature!) */}
-      <section className="py-24 bg-[#FAF8F5] border-y border-slate-200 relative overflow-hidden">
+      <section className="py-24 bg-[#E4EDFB] border-y border-slate-200 relative overflow-hidden">
         {/* Decorative Grid Background */}
         <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-60" />
 

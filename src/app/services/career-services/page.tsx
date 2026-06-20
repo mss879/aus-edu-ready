@@ -58,7 +58,7 @@ export default function CareerServices() {
       </section>
 
       {/* Counselor Callout */}
-      <section className="py-20 bg-white overflow-hidden relative border-t border-slate-100">
+      <section className="py-20 bg-[#E4EDFB] overflow-hidden relative border-t border-[#dbe5f1]">
         <div className="container relative z-10 px-4 mx-auto max-w-4xl text-center space-y-6">
           <h2 className="font-heading text-3xl md:text-5xl font-black text-slate-900 tracking-tight">Secure Your Graduate Career Path</h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-medium">

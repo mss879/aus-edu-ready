@@ -43,7 +43,7 @@ export default function CountryPage({ params }: { params: { country: string } })
                 </p>
                 <div className="space-y-4">
                   {country.highlights.map((highlight, i) => (
-                    <div key={i} className="flex items-start bg-[#FAF8F5] p-4 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300">
+                    <div key={i} className="flex items-start bg-[#E4EDFB] p-4 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300">
                       <CheckCircle2 className="w-6 h-6 mr-4 text-[#124b8d] shrink-0" />
                       <span className="font-bold text-[#11181C] text-base">{highlight}</span>
                     </div>
@@ -58,7 +58,7 @@ export default function CountryPage({ params }: { params: { country: string } })
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {country.topUniversities.map((uni, i) => (
-                    <div key={i} className="p-4 border border-slate-200 bg-[#FAF8F5] rounded-xl font-bold text-center text-[#11181C] text-base md:text-lg hover:border-[#124b8d] hover:bg-white hover:shadow-md transition-all duration-300">
+                    <div key={i} className="p-4 border border-slate-200 bg-[#E4EDFB] rounded-xl font-bold text-center text-[#11181C] text-base md:text-lg hover:border-[#124b8d] hover:bg-white hover:shadow-md transition-all duration-300">
                       {uni}
                     </div>
                   ))}
@@ -96,7 +96,7 @@ export default function CountryPage({ params }: { params: { country: string } })
                 </CardContent>
               </Card>
 
-              <div className="bg-[#FAF8F5] border border-slate-200/50 p-8 rounded-[2rem] text-slate-900 text-center hover:shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:-translate-y-0.5 transition-all duration-300 relative overflow-hidden">
+              <div className="bg-[#E4EDFB] border border-slate-200/50 p-8 rounded-[2rem] text-slate-900 text-center hover:shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:-translate-y-0.5 transition-all duration-300 relative overflow-hidden">
                 {/* Decorative Grid Background */}
                 <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:3rem_3rem] opacity-40 pointer-events-none" />
                 <div className="relative z-10 space-y-4">

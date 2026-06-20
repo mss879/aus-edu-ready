@@ -66,7 +66,7 @@ export default function PartnerFamilyVisaServices() {
       </section>
 
       {/* Inclusions checklist */}
-      <section className="py-24 bg-white border-t border-slate-100">
+      <section className="py-24 bg-[#E4EDFB] border-t border-[#dbe5f1]">
         <div className="container mx-auto px-4 max-w-7xl space-y-16">
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="font-heading text-3xl font-bold tracking-tight text-[#11181C]">

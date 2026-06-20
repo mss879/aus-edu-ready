@@ -135,7 +135,7 @@ export default function StudyWorldwidePortal() {
                       {country.description || country.tagline}
                     </p>
                     
-                    <div className="bg-[#FAF8F5] border border-slate-100 p-3.5 rounded-xl space-y-2 text-sm text-slate-600 font-semibold">
+                    <div className="bg-[#E4EDFB] border border-slate-100 p-3.5 rounded-xl space-y-2 text-sm text-slate-600 font-semibold">
                       <div className="flex justify-between"><span>Tuition Cost:</span> <span className="text-[#11181C]">{country.tuitionFees}</span></div>
                       <div className="flex justify-between"><span>Living Cost:</span> <span className="text-[#11181C]">{country.costOfLiving}</span></div>
                     </div>
@@ -153,7 +153,7 @@ export default function StudyWorldwidePortal() {
       </section>
 
       {/* Compare Destinations Tool */}
-      <section id="compare" className="py-24 bg-[#FAF8F5] border-y border-slate-200">
+      <section id="compare" className="py-24 bg-[#E4EDFB] border-y border-slate-200">
         <div className="container mx-auto px-4 max-w-7xl space-y-12">
           <div className="text-center max-w-2xl mx-auto">
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-sm font-bold uppercase tracking-wider mb-3">
@@ -346,7 +346,7 @@ export default function StudyWorldwidePortal() {
       </section>
 
       {/* Worldwide FAQs Accordion Section */}
-      <section id="faqs" className="py-24 bg-[#FAF8F5] border-t border-slate-200">
+      <section id="faqs" className="py-24 bg-[#E4EDFB] border-t border-slate-200">
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="text-center mb-16">
             <h2 className="font-heading text-4xl font-medium tracking-tight text-[#11181C]">

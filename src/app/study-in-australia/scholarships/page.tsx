@@ -39,7 +39,7 @@ export default function Scholarships() {
       />
 
       {/* Scholarship Types Section */}
-      <section className="py-24 bg-[#FAF8F5]">
+      <section className="py-24 bg-[#E4EDFB]">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <div className="flex items-center justify-center gap-3 mb-4">
@@ -155,7 +155,7 @@ export default function Scholarships() {
       </section>
 
       {/* Interactive Eligibility assessment Callout Section */}
-      <section className="py-24 bg-[#FAF8F5] relative overflow-hidden">
+      <section className="py-24 bg-[#E4EDFB] relative overflow-hidden">
         {/* Decorative Grid Background */}
         <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-60" />
 

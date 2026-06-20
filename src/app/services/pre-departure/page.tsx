@@ -58,7 +58,7 @@ export default function PreDeparture() {
       </section>
 
       {/* Checklist banner */}
-      <section className="py-24 bg-white border-t border-slate-100">
+      <section className="py-24 bg-[#E4EDFB] border-t border-[#dbe5f1]">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="bg-white border border-slate-100 rounded-[2.5rem] p-8 lg:p-12 text-center shadow-[0_15px_50px_rgba(0,0,0,0.03)] space-y-6 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-slate-100/50 rounded-bl-full pointer-events-none" />

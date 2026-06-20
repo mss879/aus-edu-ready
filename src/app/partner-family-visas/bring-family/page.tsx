@@ -84,7 +84,7 @@ export default function BringFamily() {
       </section>
 
       {/* Options comparison */}
-      <section className="py-24 bg-[#FAF8F5] border-y border-slate-200">
+      <section className="py-24 bg-[#E4EDFB] border-y border-slate-200">
         <div className="container mx-auto px-4 max-w-7xl space-y-16">
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="font-heading text-3xl font-bold tracking-tight text-[#11181C]">
@@ -160,7 +160,7 @@ export default function BringFamily() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Relationship Evidence */}
-            <div className="bg-[#FAF8F5] border border-slate-200/60 p-8 rounded-3xl space-y-6 hover:shadow-[0_15px_40px_rgba(0,0,0,0.04)] hover:border-slate-300/80 hover:-translate-y-1 transition-all duration-300">
+            <div className="bg-[#E4EDFB] border border-slate-200/60 p-8 rounded-3xl space-y-6 hover:shadow-[0_15px_40px_rgba(0,0,0,0.04)] hover:border-slate-300/80 hover:-translate-y-1 transition-all duration-300">
               <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 border border-blue-100/60 flex items-center justify-center font-bold text-sm">
                 01
               </div>
@@ -191,7 +191,7 @@ export default function BringFamily() {
             </div>
 
             {/* Financial Capacity */}
-            <div className="bg-[#FAF8F5] border border-slate-200/60 p-8 rounded-3xl space-y-6 hover:shadow-[0_15px_40px_rgba(0,0,0,0.04)] hover:border-slate-300/80 hover:-translate-y-1 transition-all duration-300">
+            <div className="bg-[#E4EDFB] border border-slate-200/60 p-8 rounded-3xl space-y-6 hover:shadow-[0_15px_40px_rgba(0,0,0,0.04)] hover:border-slate-300/80 hover:-translate-y-1 transition-all duration-300">
               <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 border border-blue-100/60 flex items-center justify-center font-bold text-sm">
                 02
               </div>
@@ -218,7 +218,7 @@ export default function BringFamily() {
             </div>
 
             {/* Health & Character */}
-            <div className="bg-[#FAF8F5] border border-slate-200/60 p-8 rounded-3xl space-y-6 hover:shadow-[0_15px_40px_rgba(0,0,0,0.04)] hover:border-slate-300/80 hover:-translate-y-1 transition-all duration-300">
+            <div className="bg-[#E4EDFB] border border-slate-200/60 p-8 rounded-3xl space-y-6 hover:shadow-[0_15px_40px_rgba(0,0,0,0.04)] hover:border-slate-300/80 hover:-translate-y-1 transition-all duration-300">
               <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 border border-blue-100/60 flex items-center justify-center font-bold text-sm">
                 03
               </div>
@@ -248,7 +248,7 @@ export default function BringFamily() {
       </section>
 
       {/* Counselor Callout */}
-      <section className="py-20 bg-[#FAF8F5] border-t border-slate-200 text-slate-900 overflow-hidden relative">
+      <section className="py-20 bg-[#E4EDFB] border-t border-slate-200 text-slate-900 overflow-hidden relative">
         <div className="container relative z-10 px-4 mx-auto max-w-4xl text-center space-y-6">
           <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-[#11181C]">Secure Your Family Visa Advice</h2>
           <p className="text-lg text-slate-505 max-w-2xl mx-auto leading-relaxed font-medium">

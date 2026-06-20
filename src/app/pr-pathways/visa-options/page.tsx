@@ -35,7 +35,7 @@ export default function VisaOptions() {
         <div className="container mx-auto px-4 max-w-7xl space-y-24">
           
           {/* Subclass 485 Overhaul (Featured Section) */}
-          <div className="bg-[#FAF8F5] border border-slate-200 rounded-[2.5rem] p-8 lg:p-12 shadow-sm relative overflow-hidden group">
+          <div className="bg-[#E4EDFB] border border-slate-200 rounded-[2.5rem] p-8 lg:p-12 shadow-sm relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-64 h-64 bg-slate-100/50 rounded-bl-full pointer-events-none" />
             
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start relative z-10">
@@ -107,7 +107,7 @@ export default function VisaOptions() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             
             {/* Subclass 407 Training Visa */}
-            <div className="bg-[#FAF8F5] border border-slate-200 rounded-[2.5rem] p-8 lg:p-10 shadow-sm relative overflow-hidden group flex flex-col justify-between h-full hover:shadow-xl hover:border-slate-300 transition-all duration-500">
+            <div className="bg-[#E4EDFB] border border-slate-200 rounded-[2.5rem] p-8 lg:p-10 shadow-sm relative overflow-hidden group flex flex-col justify-between h-full hover:shadow-xl hover:border-slate-300 transition-all duration-500">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#e31b23]/5 rounded-bl-full pointer-events-none" />
               <div className="space-y-6">
                 <div>
@@ -147,7 +147,7 @@ export default function VisaOptions() {
             </div>
 
             {/* Subclass 482 Temporary Skill Shortage */}
-            <div className="bg-[#FAF8F5] border border-slate-200 rounded-[2.5rem] p-8 lg:p-10 shadow-sm relative overflow-hidden group flex flex-col justify-between h-full hover:shadow-xl hover:border-slate-300 transition-all duration-500">
+            <div className="bg-[#E4EDFB] border border-slate-200 rounded-[2.5rem] p-8 lg:p-10 shadow-sm relative overflow-hidden group flex flex-col justify-between h-full hover:shadow-xl hover:border-slate-300 transition-all duration-500">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#124b8d]/5 rounded-bl-full pointer-events-none" />
               <div className="space-y-6">
                 <div>

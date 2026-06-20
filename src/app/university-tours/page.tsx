@@ -71,7 +71,7 @@ export default function UniversityTours() {
       />
 
       {/* Intro Metrics */}
-      <section className="py-24 bg-[#FAF8F5]/40 relative overflow-hidden">
+      <section className="py-24 bg-[#E4EDFB]/40 relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none opacity-40" />
         
         <div className="container mx-auto px-4 max-w-7xl relative z-10">
@@ -113,7 +113,7 @@ export default function UniversityTours() {
               
               <div className="bg-white/70 backdrop-blur-md border border-slate-200/80 p-8 rounded-[2rem] flex gap-6 hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] hover:border-[#124b8d]/30 hover:-translate-y-1.5 transition-all duration-500 shadow-sm relative overflow-hidden group">
                 <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-[#124b8d]/5 to-transparent rounded-bl-full pointer-events-none group-hover:from-[#124b8d]/10 transition-all duration-500" />
-                <div className="w-14 h-14 rounded-2xl bg-[#FAF8F5] border border-slate-200 text-[#124b8d] flex items-center justify-center shrink-0 group-hover:bg-[#124b8d] group-hover:text-white group-hover:rotate-[8deg] group-hover:scale-110 shadow-sm transition-all duration-500">
+                <div className="w-14 h-14 rounded-2xl bg-[#E4EDFB] border border-slate-200 text-[#124b8d] flex items-center justify-center shrink-0 group-hover:bg-[#124b8d] group-hover:text-white group-hover:rotate-[8deg] group-hover:scale-110 shadow-sm transition-all duration-500">
                   <Flame className="w-6 h-6" />
                 </div>
                 <div className="relative z-10">
@@ -124,7 +124,7 @@ export default function UniversityTours() {
 
               <div className="bg-white/70 backdrop-blur-md border border-slate-200/80 p-8 rounded-[2rem] flex gap-6 hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] hover:border-[#e31b23]/30 hover:-translate-y-1.5 transition-all duration-500 shadow-sm relative overflow-hidden group">
                 <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-[#e31b23]/5 to-transparent rounded-bl-full pointer-events-none group-hover:from-[#e31b23]/10 transition-all duration-500" />
-                <div className="w-14 h-14 rounded-2xl bg-[#FAF8F5] border border-slate-200 text-[#e31b23] flex items-center justify-center shrink-0 group-hover:bg-[#e31b23] group-hover:text-white group-hover:rotate-[8deg] group-hover:scale-110 shadow-sm transition-all duration-500">
+                <div className="w-14 h-14 rounded-2xl bg-[#E4EDFB] border border-slate-200 text-[#e31b23] flex items-center justify-center shrink-0 group-hover:bg-[#e31b23] group-hover:text-white group-hover:rotate-[8deg] group-hover:scale-110 shadow-sm transition-all duration-500">
                   <Users className="w-6 h-6" />
                 </div>
                 <div className="relative z-10">
@@ -269,7 +269,7 @@ export default function UniversityTours() {
                     {tourFormats[activeTab].highlights.map((highlight, hidx) => (
                       <li 
                         key={hidx} 
-                        className="flex items-start p-3 bg-[#FAF8F5]/30 hover:bg-slate-50 border border-slate-100/30 hover:border-slate-200/50 rounded-2xl transition-all duration-300 group cursor-default"
+                        className="flex items-start p-3 bg-[#E4EDFB]/30 hover:bg-slate-50 border border-slate-100/30 hover:border-slate-200/50 rounded-2xl transition-all duration-300 group cursor-default"
                       >
                         <CheckCircle2 className="w-5 h-5 mr-3 text-[#124b8d] shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-300" />
                         <span className="text-sm md:text-base text-slate-600 group-hover:text-slate-900 transition-colors duration-200 font-medium leading-relaxed">

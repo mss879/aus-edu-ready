@@ -91,7 +91,7 @@ export default function AboutPortal() {
       </section>
 
       {/* Subpage Bento Directory */}
-      <section className="py-24 bg-white border-y border-slate-100">
+      <section className="py-24 bg-[#E4EDFB] border-y border-[#dbe5f1]">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-sm font-bold uppercase tracking-wider mb-3">

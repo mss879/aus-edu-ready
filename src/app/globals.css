@@ -3,19 +3,21 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --color-brand-primary: #1e3a8a;
-  /* Deep Navy Blue */
-  --color-brand-primary-light: #3b82f6;
-  --color-brand-primary-dark: #172554;
-  --color-brand-accent: #d4af37;
-  /* Gold */
-  --color-brand-accent-light: #fcd34d;
-  --color-brand-accent-dark: #b45309;
+  /* ── Brand palette — navy + red from the AEC logo (Australian flag scheme) ── */
+  --color-brand-primary: #124b8d;
+  /* Logo Navy Blue */
+  --color-brand-primary-light: #1d6fd4;
+  --color-brand-primary-dark: #0c3463;
+  --color-brand-accent: #e31b23;
+  /* Logo Red */
+  --color-brand-accent-light: #f5333b;
+  --color-brand-accent-dark: #b81218;
 
   --color-background: var(--bg);
   --color-foreground: var(--text);
   --color-surface: var(--surface);
   --color-surface-hover: var(--surface-hover);
+  --color-surface-tint: var(--surface-tint);
   --color-border: var(--border);
 
   --font-sans: var(--font-plus-jakarta);
@@ -24,19 +26,22 @@
 }
 
 :root {
-  --bg: #ffffff;
+  --bg: #fbfdff;
   --text: #0f172a;
-  --surface: #f8fafc;
-  --surface-hover: #f1f5f9;
-  --border: #e2e8f0;
+  /* Cool blue-tinted neutrals replace the old warm white/cream */
+  --surface: #eef4fc;
+  --surface-hover: #e9f1fb;
+  --surface-tint: #e4edfb;
+  --border: #dbe5f1;
 }
 
 .dark {
-  --bg: #020617;
-  --text: #f8fafc;
-  --surface: #0f172a;
-  --surface-hover: #1e293b;
-  --border: #334155;
+  --bg: #060d1a;
+  --text: #f1f5f9;
+  --surface: #0c1b30;
+  --surface-hover: #122740;
+  --surface-tint: #0a1626;
+  --border: #1e3a5f;
 }
 
 body {
@@ -54,6 +59,44 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heading);
+}
+
+/* ── Brand section helpers (keeps the page from reading as a white void) ── */
+.section-tint {
+  background-color: var(--surface-tint);
+}
+
+.section-navy {
+  background-color: var(--color-brand-primary-dark);
+  color: #ffffff;
+}
+
+/* Red "eyebrow" kicker used above section headings for a consistent pop of brand red */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-brand-accent);
+}
+
+.eyebrow::before {
+  content: "";
+  width: 1.5rem;
+  height: 2px;
+  background-color: var(--color-brand-accent);
+  border-radius: 2px;
+}
+
+.eyebrow.eyebrow-center::after {
+  content: "";
+  width: 1.5rem;
+  height: 2px;
+  background-color: var(--color-brand-accent);
+  border-radius: 2px;
 }
 
 @keyframes marquee {

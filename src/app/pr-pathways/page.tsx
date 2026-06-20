@@ -56,7 +56,7 @@ export default function PRPathwaysPortal() {
                 Studying in Australia can be the first step toward building a long-term professional career and future in Australia. AEC helps students map post-study work visas, secure employer sponsorships, navigate skilled regional programs, and coordinate family-inclusive PR pathways.
               </p>
               
-              <div className="p-6 bg-[#FAF8F5] border border-slate-200 rounded-2xl flex items-center gap-4">
+              <div className="p-6 bg-[#E4EDFB] border border-slate-200 rounded-2xl flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#124b8d] border border-blue-100 flex items-center justify-center shrink-0">
                   <Award className="w-6 h-6" />
                 </div>
@@ -114,7 +114,7 @@ export default function PRPathwaysPortal() {
       </section>
 
       {/* Directory Subpages Bento Section */}
-      <section className="py-24 bg-[#FAF8F5] border-y border-slate-200">
+      <section className="py-24 bg-[#E4EDFB] border-y border-slate-200">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-[#124b8d] text-xs font-bold uppercase tracking-wider mb-3">
@@ -128,7 +128,7 @@ export default function PRPathwaysPortal() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {/* Visa Options Card */}
             <Link href="/pr-pathways/visa-options" className="group block bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden h-[260px] flex flex-col justify-between">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#FAF8F5] rounded-bl-full group-hover:bg-[#FAF8F5]/80 transition-colors" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#E4EDFB] rounded-bl-full group-hover:bg-[#E4EDFB]/80 transition-colors" />
               <div>
                 <div className="w-12 h-12 rounded-xl bg-blue-50 border border-blue-100 text-[#124b8d] flex items-center justify-center mb-6">
                   <FileText className="w-6 h-6" />
@@ -143,7 +143,7 @@ export default function PRPathwaysPortal() {
 
             {/* Journey Card */}
             <Link href="/pr-pathways/journey" className="group block bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden h-[260px] flex flex-col justify-between">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#FAF8F5] rounded-bl-full group-hover:bg-[#FAF8F5]/80 transition-colors" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#E4EDFB] rounded-bl-full group-hover:bg-[#E4EDFB]/80 transition-colors" />
               <div>
                 <div className="w-12 h-12 rounded-xl bg-red-50 border border-red-100 text-[#e31b23] flex items-center justify-center mb-6">
                   <TrendingUp className="w-6 h-6" />
@@ -158,7 +158,7 @@ export default function PRPathwaysPortal() {
 
             {/* PR Categories Card */}
             <Link href="/pr-pathways/categories" className="group block bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden h-[260px] flex flex-col justify-between">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#FAF8F5] rounded-bl-full group-hover:bg-[#FAF8F5]/80 transition-colors" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#E4EDFB] rounded-bl-full group-hover:bg-[#E4EDFB]/80 transition-colors" />
               <div>
                 <div className="w-12 h-12 rounded-xl bg-blue-50 border border-blue-100 text-[#124b8d] flex items-center justify-center mb-6">
                   <Award className="w-6 h-6" />

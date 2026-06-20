@@ -96,7 +96,7 @@ export default function EntryPoints() {
       </section>
 
       {/* Planning note */}
-      <section className="py-24 bg-[#FAF8F5] border-t border-slate-200">
+      <section className="py-24 bg-[#E4EDFB] border-t border-slate-200">
         <div className="container mx-auto px-4 max-w-4xl text-center space-y-6">
           <h2 className="font-heading text-3xl md:text-4xl font-black tracking-tight text-slate-900">
             Important Academic Placement Rules

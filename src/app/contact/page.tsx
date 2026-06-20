@@ -105,7 +105,7 @@ export default function Contact() {
       />
 
       {/* Quick Contact Portal bar */}
-      <section className="py-8 bg-[#FAF8F5] text-slate-900 border-y border-slate-200">
+      <section className="py-8 bg-[#E4EDFB] text-slate-900 border-y border-slate-200">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center divide-y md:divide-y-0 md:divide-x divide-slate-200">
             <div className="py-4 md:py-0">
@@ -130,7 +130,7 @@ export default function Contact() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             
             {/* Form Column */}
-            <div className="lg:col-span-7 bg-[#FAF8F5] border border-slate-200 p-8 lg:p-12 rounded-[2.5rem] shadow-sm relative overflow-hidden">
+            <div className="lg:col-span-7 bg-[#E4EDFB] border border-slate-200 p-8 lg:p-12 rounded-[2.5rem] shadow-sm relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-slate-100/50 rounded-bl-full pointer-events-none" />
               
               {!submitted ? (
@@ -259,7 +259,7 @@ export default function Contact() {
               </div>
 
               {/* Head office quick card */}
-              <div className="bg-[#FAF8F5] border border-slate-200 p-6 rounded-2xl space-y-4 shadow-sm">
+              <div className="bg-[#E4EDFB] border border-slate-200 p-6 rounded-2xl space-y-4 shadow-sm">
                 <h3 className="font-bold text-base text-[#11181C] flex items-center">
                   <Clock className="w-5 h-5 mr-2 text-[#124b8d]" /> Colombo Head Office Hours
                 </h3>
@@ -285,7 +285,7 @@ export default function Contact() {
       </section>
 
       {/* Global Offices grid */}
-      <section className="py-24 bg-[#FAF8F5] border-t border-slate-200">
+      <section className="py-24 bg-[#E4EDFB] border-t border-slate-200">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-wider mb-3">
@@ -364,7 +364,7 @@ export default function Contact() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((test, idx) => (
-              <Card key={idx} className="bg-[#FAF8F5] border border-slate-200 shadow-sm hover:shadow-xl hover:border-slate-350 hover:-translate-y-1 transition-all duration-500 relative overflow-hidden p-8 flex flex-col justify-between rounded-[2rem]">
+              <Card key={idx} className="bg-[#E4EDFB] border border-slate-200 shadow-sm hover:shadow-xl hover:border-slate-350 hover:-translate-y-1 transition-all duration-500 relative overflow-hidden p-8 flex flex-col justify-between rounded-[2rem]">
                 <div className="absolute top-4 right-8 text-slate-300/30 pointer-events-none">
                   <MessageSquare className="w-20 h-20" />
                 </div>

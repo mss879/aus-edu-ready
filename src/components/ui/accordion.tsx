@@ -29,7 +29,7 @@ export function Accordion({ items }: AccordionProps) {
             <button
               className={cn(
                 "w-full flex items-center justify-between p-5 text-left transition-all duration-300 font-bold text-slate-800 hover:text-[#124b8d] cursor-pointer",
-                isOpen && "bg-[#FAF8F5] text-[#124b8d]"
+                isOpen && "bg-[#E4EDFB] text-[#124b8d]"
               )}
               onClick={() => setOpenIndex(isOpen ? null : index)}
             >

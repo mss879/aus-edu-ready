@@ -97,7 +97,7 @@ export default function WhyStudyInAustralia() {
       />
 
       {/* Core Reasons Section */}
-      <section className="py-24 bg-[#FAF8F5]">
+      <section className="py-24 bg-[#E4EDFB]">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <div className="flex items-center justify-center gap-3 mb-4">
@@ -310,7 +310,7 @@ export default function WhyStudyInAustralia() {
                   <div className={`absolute bottom-0 left-0 right-0 h-[4px] ${isBlue ? "bg-[#124b8d]" : "bg-[#e31b23]"} scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`} />
 
                   <div className="relative z-10">
-                    <div className={`w-14 h-14 rounded-2xl bg-[#FAF8F5] border border-slate-200 flex items-center justify-center mb-6 text-[#124b8d] group-hover:text-white ${isBlue ? "group-hover:bg-[#124b8d]" : "group-hover:bg-[#e31b23]"} group-hover:rotate-[12deg] transition-all duration-500`}>
+                    <div className={`w-14 h-14 rounded-2xl bg-[#E4EDFB] border border-slate-200 flex items-center justify-center mb-6 text-[#124b8d] group-hover:text-white ${isBlue ? "group-hover:bg-[#124b8d]" : "group-hover:bg-[#e31b23]"} group-hover:rotate-[12deg] transition-all duration-500`}>
                       <Icon className="w-6 h-6" />
                     </div>
                     <h3 className="font-bold text-base text-slate-900 mb-3 group-hover:text-[#124b8d] transition-colors duration-300 leading-snug">{discipline.name}</h3>
@@ -324,7 +324,7 @@ export default function WhyStudyInAustralia() {
       </section>
 
       {/* Call to Action Booking Panel */}
-      <section className="py-20 bg-[#FAF8F5] relative overflow-hidden">
+      <section className="py-20 bg-[#E4EDFB] relative overflow-hidden">
         {/* Decorative Grid Background */}
         <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
         

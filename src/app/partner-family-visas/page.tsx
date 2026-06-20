@@ -135,7 +135,7 @@ export default function PartnerFamilyVisas() {
       </section>
 
       {/* Bento Grid Directory (Wow Factor Navigation Hub) */}
-      <section className="py-24 bg-[#FAF8F5] border-b border-slate-200">
+      <section className="py-24 bg-[#E4EDFB] border-b border-slate-200">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-wider mb-3">
@@ -190,7 +190,7 @@ export default function PartnerFamilyVisas() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <Card className="bg-[#FAF8F5] border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 rounded-[2rem]">
+            <Card className="bg-[#E4EDFB] border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 rounded-[2rem]">
               <CardContent className="p-8 space-y-4">
                 <div className="w-12 h-12 rounded-full bg-red-50 text-red-600 flex items-center justify-center border border-red-100">
                   <Heart className="w-6 h-6 animate-pulse" />
@@ -202,7 +202,7 @@ export default function PartnerFamilyVisas() {
               </CardContent>
             </Card>
 
-            <Card className="bg-[#FAF8F5] border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 rounded-[2rem]">
+            <Card className="bg-[#E4EDFB] border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 rounded-[2rem]">
               <CardContent className="p-8 space-y-4">
                 <div className="w-12 h-12 rounded-full bg-red-50 text-[#e31b23] flex items-center justify-center border border-red-100">
                   <Briefcase className="w-6 h-6" />
@@ -214,7 +214,7 @@ export default function PartnerFamilyVisas() {
               </CardContent>
             </Card>
 
-            <Card className="bg-[#FAF8F5] border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 rounded-[2rem]">
+            <Card className="bg-[#E4EDFB] border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 rounded-[2rem]">
               <CardContent className="p-8 space-y-4">
                 <div className="w-12 h-12 rounded-full bg-blue-50 text-[#124b8d] flex items-center justify-center border border-blue-100">
                   <Baby className="w-6 h-6" />
@@ -230,7 +230,7 @@ export default function PartnerFamilyVisas() {
       </section>
 
       {/* Relationship Requirements Dashboard */}
-      <section className="py-24 bg-[#FAF8F5] border-t border-slate-200">
+      <section className="py-24 bg-[#E4EDFB] border-t border-slate-200">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Column */}

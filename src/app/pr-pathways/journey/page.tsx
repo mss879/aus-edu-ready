@@ -69,7 +69,7 @@ export default function PRJourney() {
                 The typical journey from starting as a student to receiving permanent residency spans <strong className="font-semibold text-slate-800">4 to 6 years</strong>, depending on your course, chosen occupation, accumulated work experience, government migration policy, and individual eligibility points.
               </p>
               
-              <div className="p-6 bg-[#FAF8F5] border border-slate-200 border-l-4 border-l-[#124b8d] rounded-r-2xl rounded-l-md space-y-4 shadow-sm">
+              <div className="p-6 bg-[#E4EDFB] border border-slate-200 border-l-4 border-l-[#124b8d] rounded-r-2xl rounded-l-md space-y-4 shadow-sm">
                 <div className="text-sm font-bold uppercase tracking-wider text-[#124b8d] flex items-center gap-2">
                   <Clock className="w-4 h-4 animate-pulse text-[#124b8d]" /> Timeline Summary:
                 </div>

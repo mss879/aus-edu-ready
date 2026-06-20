@@ -60,7 +60,7 @@ export default function PRCategories() {
       />
 
       {/* Categories Cards Section */}
-      <section className="py-24 bg-[#FAF8F5]/40 relative overflow-hidden">
+      <section className="py-24 bg-[#E4EDFB]/40 relative overflow-hidden">
         {/* Soft Background Grid */}
         <div className="absolute inset-0 bg-[radial-gradient(#80808005_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
 
@@ -129,7 +129,7 @@ export default function PRCategories() {
       </section>
 
       {/* Comparison table */}
-      <section className="py-28 bg-[#FAF8F5] border-y border-slate-200/60 relative overflow-hidden">
+      <section className="py-28 bg-[#E4EDFB] border-y border-slate-200/60 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(#80808004_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
 
         <div className="container mx-auto px-4 max-w-7xl relative z-10 space-y-16">
@@ -186,7 +186,7 @@ export default function PRCategories() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#124b8d]/5 rounded-full blur-[120px] pointer-events-none -z-10" />
 
         <div className="container mx-auto px-4 max-w-4xl relative z-10">
-          <div className="bg-gradient-to-br from-[#FAF8F5] via-white to-[#FAF8F5] border border-slate-200/80 rounded-[3rem] shadow-[0_20px_50px_rgba(0,0,0,0.03)] p-10 lg:p-16 text-center space-y-8 relative overflow-hidden group hover:shadow-[0_30px_70px_rgba(0,0,0,0.05)] transition-shadow duration-500">
+          <div className="bg-gradient-to-br from-[#E4EDFB] via-white to-[#E4EDFB] border border-slate-200/80 rounded-[3rem] shadow-[0_20px_50px_rgba(0,0,0,0.03)] p-10 lg:p-16 text-center space-y-8 relative overflow-hidden group hover:shadow-[0_30px_70px_rgba(0,0,0,0.05)] transition-shadow duration-500">
             <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-[#124b8d]/5 to-transparent rounded-bl-full pointer-events-none group-hover:from-[#124b8d]/10 transition-all duration-500" />
             
             <h2 className="font-heading text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900 leading-tight">

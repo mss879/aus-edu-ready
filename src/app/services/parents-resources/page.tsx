@@ -62,7 +62,7 @@ export default function ParentsResources() {
       </section>
 
       {/* Resources grid */}
-      <section className="py-24 bg-white border-t border-slate-100">
+      <section className="py-24 bg-[#E4EDFB] border-t border-[#dbe5f1]">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {parentResources.map((res, idx) => (

@@ -105,7 +105,7 @@ export default function CostsInvestment() {
       </section>
 
       {/* Dynamic Calculator */}
-      <section className="py-24 bg-[#FAF8F5] border-y border-slate-200">
+      <section className="py-24 bg-[#E4EDFB] border-y border-slate-200">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-wider mb-3">
@@ -168,7 +168,7 @@ export default function CostsInvestment() {
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between p-4 bg-[#FAF8F5] border border-slate-100 rounded-2xl">
+                <div className="flex items-center justify-between p-4 bg-[#E4EDFB] border border-slate-100 rounded-2xl">
                   <div>
                     <div className="text-xs font-bold text-[#11181C]">Include Compulsory Extras</div>
                     <div className="text-[10px] text-slate-500 font-medium mt-0.5">Pocket money, uniforms, book codes, OSHC</div>
@@ -219,7 +219,7 @@ export default function CostsInvestment() {
               >
                 <div className="space-y-4">
                   <h3 className="font-bold text-lg text-[#11181C] leading-tight tracking-tight">{tier.tier}</h3>
-                  <div className="font-extrabold text-[#124b8d] text-sm bg-[#FAF8F5] border border-slate-100 px-3 py-1.5 rounded-lg w-fit">{tier.value}</div>
+                  <div className="font-extrabold text-[#124b8d] text-sm bg-[#E4EDFB] border border-slate-100 px-3 py-1.5 rounded-lg w-fit">{tier.value}</div>
                   <p className="text-slate-600 text-sm font-medium leading-relaxed">{tier.label}</p>
                 </div>
               </div>
@@ -229,7 +229,7 @@ export default function CostsInvestment() {
       </section>
 
       {/* CTA Estimate */}
-      <section className="py-20 bg-[#FAF8F5] overflow-hidden relative border-t border-slate-200">
+      <section className="py-20 bg-[#E4EDFB] overflow-hidden relative border-t border-slate-200">
         <div className="container relative z-10 px-4 mx-auto max-w-4xl text-center space-y-6">
           <h2 className="font-heading text-3xl md:text-5xl font-black text-slate-900 tracking-tight">Secure Your Child&apos;s Cost Audit</h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-medium">

@@ -90,7 +90,7 @@ export default function ChildrenBenefits() {
       </section>
 
       {/* School fees details */}
-      <section className="py-24 bg-[#FAF8F5] border-t border-slate-200">
+      <section className="py-24 bg-[#E4EDFB] border-t border-slate-200">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="bg-blue-50/40 border border-blue-100 rounded-[2rem] p-8 lg:p-10 shadow-sm relative overflow-hidden flex flex-col md:flex-row items-center gap-6">
             <div className="w-12 h-12 rounded-full bg-blue-50 text-[#124b8d] shrink-0 flex items-center justify-center border border-blue-100/50">
