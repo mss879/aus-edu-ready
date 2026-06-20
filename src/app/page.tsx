@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useState, useRef } from "react";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Globe, GraduationCap, Building2, Users, Target, Plane, FileCheck, ArrowRight, MapPin, Phone, Calendar, ArrowUpRight, Search, Plus, ShieldCheck, Briefcase, ClipboardCheck, Check } from "lucide-react";
 import Link from "next/link";
@@ -11,18 +11,8 @@ import { TestimonialsMarquee } from "@/components/ui/testimonials-marquee";
 export default function Home() {
   const [activeStep, setActiveStep] = useState(0);
   const [activeService, setActiveService] = useState<number | null>(null);
-  const [isProcessPaused, setIsProcessPaused] = useState(false);
 
   const processRef = useRef(null);
-  const isProcessInView = useInView(processRef, { once: false, amount: 0.3 });
-
-  useEffect(() => {
-    if (!isProcessInView || isProcessPaused) return;
-    const timer = setInterval(() => {
-      setActiveStep((prev) => (prev + 1) % 5);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, [isProcessInView, isProcessPaused]);
 
   // Our Process — five guided stages (facts sourced from the AEC content document)
   const processSteps = [
@@ -32,6 +22,13 @@ export default function Home() {
     { icon: Plane, title: "Pre-Departure & Travel Assistance", tag: "Included", desc: "Before you fly we arrange airline ticketing, airport pickup and accommodation, and brief you for life in your new country." },
     { icon: Briefcase, title: "Settlement & Career Support", tag: "Through to PR", desc: "After arrival we help with accommodation, part-time jobs and settling in — then guide your path to career placement and PR." },
   ];
+
+  // The active (white) step is driven by how far the visitor has scrolled through the section
+  const { scrollYProgress } = useScroll({ target: processRef, offset: ["start 70%", "end 35%"] });
+  useMotionValueEvent(scrollYProgress, "change", (v) => {
+    const idx = Math.min(processSteps.length - 1, Math.max(0, Math.floor(v * processSteps.length)));
+    setActiveStep((prev) => (prev === idx ? prev : idx));
+  });
 
   return (
     <div className="flex flex-col w-full">
@@ -636,7 +633,7 @@ export default function Home() {
                 return (
                   <div key={i} className="flex justify-center">
                     <button
-                      onClick={() => { setActiveStep(i); setIsProcessPaused(true); }}
+                      onClick={() => setActiveStep(i)}
                       aria-label={step.title}
                       className={`relative w-14 h-14 rounded-full flex items-center justify-center font-black text-sm transition-all duration-300 ${
                         isActive
@@ -674,7 +671,7 @@ export default function Home() {
                 return (
                   <motion.button
                     key={i}
-                    onClick={() => { setActiveStep(i); setIsProcessPaused(true); }}
+                    onClick={() => setActiveStep(i)}
                     variants={{ hidden: { opacity: 0, y: 26 }, visible: { opacity: 1, y: 0 } }}
                     transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                     className={`text-left rounded-2xl p-5 border-t-4 transition-all duration-300 ${
@@ -711,7 +708,7 @@ export default function Home() {
                 return (
                   <motion.button
                     key={i}
-                    onClick={() => { setActiveStep(i); setIsProcessPaused(true); }}
+                    onClick={() => setActiveStep(i)}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "-60px" }}
