@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full">
       {/* 1. Hero Section */}
-      <section className="relative w-full min-h-[600px] lg:min-h-[80vh] pt-32 pb-20 flex flex-col justify-center bg-white overflow-hidden">
+      <section className="relative w-full min-h-[640px] lg:min-h-[100svh] pt-32 pb-16 flex flex-col justify-center bg-white overflow-hidden">
         {/* Soft brand-blue + red wash so the hero never reads as a flat white void */}
         <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_75%_60%_at_12%_12%,#e7f0fc_0%,transparent_55%),radial-gradient(ellipse_55%_45%_at_95%_92%,#fdebec_0%,transparent_55%)]" />
         {/* Decorative Grid Background */}
