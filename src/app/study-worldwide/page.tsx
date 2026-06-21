@@ -72,7 +72,7 @@ export default function StudyWorldwidePortal() {
     <div className="flex flex-col w-full bg-white text-slate-900">
       <PageHero 
         title="Study Worldwide" 
-        subtitle="Explore quality educational opportunities across 18+ global destinations with AEC."
+        subtitle="Explore quality educational opportunities across 20+ global destinations with AEC."
         breadcrumb="Study Worldwide"
         bgImage="https://images.unsplash.com/photo-1526778548025-fa2fbf8b1bb3?q=80&w=2940&auto=format&fit=crop"
       />
@@ -155,6 +155,49 @@ export default function StudyWorldwidePortal() {
                 </div>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How to Choose the Right Country */}
+      <section id="choose" className="py-24 bg-white border-t border-slate-200">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-sm font-bold uppercase tracking-wider mb-3">
+              Decision Guide
+            </span>
+            <h2 className="font-heading text-4xl md:text-5xl font-medium tracking-tight text-[#11181C] leading-[1.1] mb-4">
+              How to Choose the Right Country
+            </h2>
+            <p className="text-slate-500 text-lg">
+              Weigh up the six factors that matter most. Each scale runs from the most accessible option to the most demanding &mdash; use it to narrow down where you fit best.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { factor: "Budget", icon: <Landmark className="w-6 h-6" />, color: "blue", scale: "Asia & Eastern Europe (cheapest) → Dubai & Malta → Ireland & Germany → UK & Canada → Australia & USA (most expensive)" },
+              { factor: "Work Rights", icon: <Clock className="w-6 h-6" />, color: "red", scale: "Dubai (unlimited) → Australia & Ireland (generous) → UK & Canada (standard) → USA (limited)" },
+              { factor: "English Requirement", icon: <CheckCircle2 className="w-6 h-6" />, color: "blue", scale: "Dubai & Malaysia (easiest) → Most countries (IELTS 6.0) → UK & Australia (IELTS 6.5-7.0)" },
+              { factor: "Post-Study Work", icon: <Compass className="w-6 h-6" />, color: "red", scale: "Australia (2-4 years) → Canada & Ireland (2 years) → UK (2 years) → Europe (1 year)" },
+              { factor: "PR Pathways", icon: <MapPin className="w-6 h-6" />, color: "blue", scale: "Canada & Australia (easiest) → New Zealand → Ireland & UK (challenging) → USA (very difficult)" },
+              { factor: "Schengen Benefit", icon: <Globe2 className="w-6 h-6" />, color: "red", scale: "Any EU country lets you travel across all 27 European nations on one student visa." },
+            ].map((item, idx) => {
+              const isBlue = item.color === "blue";
+              return (
+                <div
+                  key={idx}
+                  className="bg-white border border-slate-200 p-8 rounded-[2rem] flex flex-col gap-4 shadow-[0_4px_20px_rgba(0,0,0,0.015)] hover:shadow-[0_14px_34px_rgba(12,52,99,0.10)] hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group"
+                >
+                  <div className={`absolute bottom-0 left-0 right-0 h-[4px] ${isBlue ? "bg-[#124b8d]" : "bg-[#e31b23]"} scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`} />
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center border ${isBlue ? "bg-blue-50 text-[#124b8d] border-blue-100" : "bg-red-50 text-[#e31b23] border-red-100"}`}>
+                    {item.icon}
+                  </div>
+                  <h3 className="font-bold text-xl text-[#11181C] tracking-tight">{item.factor}</h3>
+                  <p className="text-slate-500 text-sm leading-relaxed font-medium">{item.scale}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

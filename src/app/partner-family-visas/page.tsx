@@ -239,10 +239,10 @@ export default function PartnerFamilyVisas() {
                 Strict Visa Criteria
               </span>
               <h2 className="text-4xl md:text-[2.5rem] font-medium tracking-tight text-[#11181C] leading-[1.1]">
-                Requirements to Include a Partner
+                What the Partner Visa Requires
               </h2>
               <p className="text-slate-600 text-lg font-medium leading-relaxed">
-                Meeting visa regulations requires thorough, structured documentation.
+                Three pillars decide a dependent visa outcome. Here is a quick overview &mdash; explore the full checklist on the next page.
               </p>
               <div className="pt-4">
                 <Link href="/partner-family-visas/bring-family">

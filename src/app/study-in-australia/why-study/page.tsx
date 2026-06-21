@@ -301,7 +301,7 @@ export default function WhyStudyInAustralia() {
               return (
                 <div 
                   key={idx} 
-                  className="bg-white border border-slate-200 p-8 rounded-3xl flex flex-col justify-between hover:shadow-2xl hover:border-slate-350 hover:-translate-y-1.5 transition-all duration-500 shadow-sm relative overflow-hidden group"
+                  className="bg-white border border-slate-200 p-8 rounded-3xl flex flex-col justify-between hover:shadow-2xl hover:border-slate-300 hover:-translate-y-1.5 transition-all duration-500 shadow-sm relative overflow-hidden group"
                 >
                   {/* Decorative corner slide indicator */}
                   <div className="absolute top-0 right-0 w-16 h-16 bg-slate-50 rounded-bl-full pointer-events-none group-hover:bg-slate-100 transition-colors z-0" />

@@ -73,7 +73,7 @@ export default function CourseFinder() {
             {popularCourses.map((course, idx) => (
               <div 
                 key={idx} 
-                className="bg-white border border-slate-200 p-8 rounded-[2rem] flex flex-col justify-between hover:shadow-xl hover:border-slate-350 hover:-translate-y-1 transition-all duration-300 relative group overflow-hidden"
+                className="bg-white border border-slate-200 p-8 rounded-[2rem] flex flex-col justify-between hover:shadow-xl hover:border-slate-300 hover:-translate-y-1 transition-all duration-300 relative group overflow-hidden"
               >
                 <div className="absolute top-0 right-0 w-24 h-24 bg-slate-50 rounded-bl-full pointer-events-none z-0 group-hover:bg-blue-50/40 transition-colors" />
                 <div className="relative z-10">
@@ -150,7 +150,7 @@ export default function CourseFinder() {
                         className={`text-left p-4 rounded-xl border font-bold text-sm transition-all flex items-center justify-between ${
                           selectedDiscipline === discipline 
                             ? "bg-[#124b8d] text-white border-[#124b8d] shadow-md scale-[1.01]" 
-                            : "bg-slate-50 border-slate-200 text-slate-800 hover:border-slate-450 hover:bg-slate-100/50"
+                            : "bg-slate-50 border-slate-200 text-slate-800 hover:border-slate-400 hover:bg-slate-100/50"
                         }`}
                       >
                         {discipline}
@@ -184,7 +184,7 @@ export default function CourseFinder() {
                         className={`text-left p-4 rounded-xl border font-bold text-sm transition-all flex items-center justify-between ${
                           selectedBudget === budget.range 
                             ? "bg-[#124b8d] text-white border-[#124b8d] shadow-md scale-[1.01]" 
-                            : "bg-slate-50 border-slate-200 text-slate-800 hover:border-slate-450 hover:bg-slate-100/50"
+                            : "bg-slate-50 border-slate-200 text-slate-800 hover:border-slate-400 hover:bg-slate-100/50"
                         }`}
                       >
                         <div>
@@ -217,7 +217,7 @@ export default function CourseFinder() {
                         className={`text-left p-4 rounded-xl border font-bold text-sm transition-all flex items-center justify-between ${
                           selectedIntake === intake 
                             ? "bg-[#124b8d] text-white border-[#124b8d] shadow-md scale-[1.01]" 
-                            : "bg-slate-50 border-slate-200 text-slate-800 hover:border-slate-450 hover:bg-slate-100/50"
+                            : "bg-slate-50 border-slate-200 text-slate-800 hover:border-slate-400 hover:bg-slate-100/50"
                         }`}
                       >
                         {intake}
@@ -241,12 +241,12 @@ export default function CourseFinder() {
                   </div>
                   <h3 className="text-3xl font-extrabold text-[#11181C]">Matching Complete!</h3>
                   <p className="text-slate-500 max-w-md text-sm">
-                    Based on your target in <span className="font-bold text-slate-850">{selectedDiscipline}</span>, a budget range of <span className="font-bold text-slate-850">{selectedBudget}</span>, and intake in <span className="font-bold text-slate-850">{selectedIntake}</span>, we have mapped matching institutional options.
+                    Based on your target in <span className="font-bold text-slate-800">{selectedDiscipline}</span>, a budget range of <span className="font-bold text-slate-800">{selectedBudget}</span>, and intake in <span className="font-bold text-slate-800">{selectedIntake}</span>, we have mapped matching institutional options.
                   </p>
 
                   <div className="bg-slate-50 border border-slate-200 p-6 rounded-2xl max-w-xl text-left space-y-3 shadow-inner">
                     <div className="text-xs font-bold uppercase tracking-wider text-[#124b8d]">✨ Recommended Pathways:</div>
-                    <ul className="text-xs text-slate-650 space-y-2 leading-relaxed">
+                    <ul className="text-xs text-slate-600 space-y-2 leading-relaxed">
                       <li>• <strong>Direct Bachelors / Masters Degree</strong> at regional providers (includes scholarship potential up to 30%).</li>
                       <li>• <strong>Diploma-to-Degree Pathways</strong> via college partners (saves tuition fees and secures 2nd-year transition).</li>
                       <li>• Eligible for up to <strong>3-year Graduate Work Rights (Subclass 485)</strong> based on selected area.</li>
@@ -273,7 +273,7 @@ export default function CourseFinder() {
                 <button
                   disabled={step === 1}
                   onClick={() => setStep(step - 1)}
-                  className="text-sm font-bold text-slate-400 hover:text-slate-650 disabled:opacity-30 disabled:pointer-events-none transition-colors"
+                  className="text-sm font-bold text-slate-400 hover:text-slate-600 disabled:opacity-30 disabled:pointer-events-none transition-colors"
                 >
                   &larr; Back
                 </button>

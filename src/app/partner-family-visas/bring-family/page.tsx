@@ -251,7 +251,7 @@ export default function BringFamily() {
       <section className="py-20 bg-[#E4EDFB] border-t border-slate-200 text-slate-900 overflow-hidden relative">
         <div className="container relative z-10 px-4 mx-auto max-w-4xl text-center space-y-6">
           <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-[#11181C]">Secure Your Family Visa Advice</h2>
-          <p className="text-lg text-slate-505 max-w-2xl mx-auto leading-relaxed font-medium">
+          <p className="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed font-medium">
             Ensure your relationship and financial proof meets high compliance standards. Consult with our legal experts for absolute clarity.
           </p>
           <div className="pt-4">

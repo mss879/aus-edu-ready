@@ -149,7 +149,7 @@ export default function PRPathwaysPortal() {
                   <TrendingUp className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold text-[#11181C] mb-2 group-hover:text-[#e31b23] transition-colors">Step-by-Step Journey to PR</h3>
-                <p className="text-slate-505 text-sm leading-relaxed line-clamp-2">Mapping your timeline from landing as an international student, graduate work experience, to skilled points tests.</p>
+                <p className="text-slate-500 text-sm leading-relaxed line-clamp-2">Mapping your timeline from landing as an international student, graduate work experience, to skilled points tests.</p>
               </div>
               <div className="flex items-center text-xs font-bold uppercase tracking-wider text-[#e31b23]">
                 View Journey Timeline <ArrowUpRight className="w-4 h-4 ml-1 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -164,7 +164,7 @@ export default function PRPathwaysPortal() {
                   <Award className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold text-[#11181C] mb-2 group-hover:text-[#124b8d] transition-colors">Permanent Residency Categories</h3>
-                <p className="text-slate-550 text-sm leading-relaxed line-clamp-2">Comprehensive grids breaking down Subclasses 491 (Skilled Regional), 189 (Independent), 190 (Nominated), and 186.</p>
+                <p className="text-slate-500 text-sm leading-relaxed line-clamp-2">Comprehensive grids breaking down Subclasses 491 (Skilled Regional), 189 (Independent), 190 (Nominated), and 186.</p>
               </div>
               <div className="flex items-center text-xs font-bold uppercase tracking-wider text-[#124b8d]">
                 Compare Categories <ArrowUpRight className="w-4 h-4 ml-1 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />

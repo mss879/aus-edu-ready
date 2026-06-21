@@ -334,7 +334,7 @@ export default function Contact() {
 
                   <div className="pt-4 border-t border-slate-200">
                     <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest block mb-2">Office Hours</span>
-                    <ul className="text-xxs text-slate-500 space-y-1 leading-relaxed">
+                    <ul className="text-[11px] text-slate-500 space-y-1 leading-relaxed">
                       {office.hours.map((hr, hIdx) => (
                         <li key={hIdx}>• {hr}</li>
                       ))}
@@ -364,7 +364,7 @@ export default function Contact() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((test, idx) => (
-              <Card key={idx} className="bg-[#E4EDFB] border border-slate-200 shadow-sm hover:shadow-xl hover:border-slate-350 hover:-translate-y-1 transition-all duration-500 relative overflow-hidden p-8 flex flex-col justify-between rounded-[2rem]">
+              <Card key={idx} className="bg-[#E4EDFB] border border-slate-200 shadow-sm hover:shadow-xl hover:border-slate-300 hover:-translate-y-1 transition-all duration-500 relative overflow-hidden p-8 flex flex-col justify-between rounded-[2rem]">
                 <div className="absolute top-4 right-8 text-slate-300/30 pointer-events-none">
                   <MessageSquare className="w-20 h-20" />
                 </div>
@@ -380,7 +380,7 @@ export default function Contact() {
                 </div>
                 <div className="mt-8 border-t border-slate-200 pt-4 relative z-10">
                   <h4 className="font-bold text-sm text-[#11181C]">{test.name}</h4>
-                  <div className="text-xxs text-slate-500 mt-0.5">{test.course}</div>
+                  <div className="text-[11px] text-slate-500 mt-0.5">{test.course}</div>
                   <div className="text-[10px] font-bold text-[#124b8d] mt-1">{test.uni}</div>
                 </div>
               </Card>
