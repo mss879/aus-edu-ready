@@ -81,7 +81,7 @@ export default function StudyInAustraliaFAQs() {
                 placeholder="Search FAQs by keywords..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-3.5 rounded-2xl border border-slate-200 bg-white text-sm text-[#11181C] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-550 transition-all shadow-sm font-semibold"
+                className="w-full pl-12 pr-4 py-3.5 rounded-2xl border border-slate-200 bg-white text-sm text-[#11181C] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all shadow-sm font-semibold"
               />
             </div>
 
@@ -138,7 +138,7 @@ export default function StudyInAustraliaFAQs() {
                     {/* expanding body content */}
                     <div className={`grid transition-all duration-350 ease-in-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
                       <div className="overflow-hidden">
-                        <div className="p-6 pt-0 pl-20 text-sm md:text-base leading-relaxed text-slate-505 border-t border-slate-150 mt-2 bg-slate-50/20">
+                        <div className="p-6 pt-0 pl-20 text-sm md:text-base leading-relaxed text-slate-500 border-t border-slate-100 mt-2 bg-slate-50/20">
                           {faq.a}
                         </div>
                       </div>
@@ -171,7 +171,7 @@ export default function StudyInAustraliaFAQs() {
             Our qualified educational counselors and MARA migration agents are available to assess your profile and answer complex queries.
           </p>
 
-          <div className="relative rounded-[2rem] overflow-hidden h-[300px] w-full max-w-3xl mx-auto border border-slate-205 shadow-lg group mt-8">
+          <div className="relative rounded-[2rem] overflow-hidden h-[300px] w-full max-w-3xl mx-auto border border-slate-200 shadow-lg group mt-8">
             <Image 
               src="/faq_support.png" 
               alt="FAQ support" 

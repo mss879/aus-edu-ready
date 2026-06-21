@@ -137,7 +137,7 @@ export default function ShortCourses() {
                     <th className="px-8 py-5">Typical Duration</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-150">
+                <tbody className="divide-y divide-slate-100">
                   <AnimatePresence mode="wait">
                     {(activeTab === "A" ? categoryA : categoryB).map((row, idx) => (
                       <motion.tr 
@@ -161,7 +161,7 @@ export default function ShortCourses() {
                           {row.providers}
                         </td>
                         <td className="px-8 py-6 font-semibold shrink-0">
-                          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-slate-100 text-slate-655 text-xs rounded-full border border-slate-200">
+                          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full border border-slate-200">
                             <Clock className="w-3.5 h-3.5 text-[#124b8d]" /> {row.duration}
                           </span>
                         </td>

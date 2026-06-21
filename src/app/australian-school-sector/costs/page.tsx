@@ -136,7 +136,7 @@ export default function CostsInvestment() {
                         className={`py-3 px-4 rounded-xl border text-xs font-bold transition-all cursor-pointer ${
                           schoolType === opt.id 
                             ? "bg-[#124b8d] text-white border-[#124b8d]" 
-                            : "bg-slate-50 border-slate-200 text-slate-500 hover:border-slate-350 hover:bg-slate-100"
+                            : "bg-slate-50 border-slate-200 text-slate-500 hover:border-slate-300 hover:bg-slate-100"
                         }`}
                       >
                         {opt.label}

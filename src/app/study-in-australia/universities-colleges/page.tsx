@@ -81,7 +81,7 @@ export default function UniversitiesColleges() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="p-6 bg-slate-50/50 border border-slate-200 rounded-2xl flex items-center gap-4 hover:shadow-md hover:border-slate-300 transition-all duration-300">
-              <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#124b8d] border border-blue-105 flex items-center justify-center shrink-0">
+              <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#124b8d] border border-blue-100 flex items-center justify-center shrink-0">
                 <GraduationCap className="w-6 h-6" />
               </div>
               <div>
@@ -90,7 +90,7 @@ export default function UniversitiesColleges() {
               </div>
             </div>
             <div className="p-6 bg-slate-50/50 border border-slate-200 rounded-2xl flex items-center gap-4 hover:shadow-md hover:border-slate-300 transition-all duration-300">
-              <div className="w-12 h-12 rounded-xl bg-red-50 text-[#e31b23] border border-red-105 flex items-center justify-center shrink-0">
+              <div className="w-12 h-12 rounded-xl bg-red-50 text-[#e31b23] border border-red-100 flex items-center justify-center shrink-0">
                 <Building2 className="w-6 h-6" />
               </div>
               <div>
@@ -99,7 +99,7 @@ export default function UniversitiesColleges() {
               </div>
             </div>
             <div className="p-6 bg-slate-50/50 border border-slate-200 rounded-2xl flex items-center gap-4 hover:shadow-md hover:border-slate-300 transition-all duration-300">
-              <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#124b8d] border border-blue-105 flex items-center justify-center shrink-0">
+              <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#124b8d] border border-blue-100 flex items-center justify-center shrink-0">
                 <ShieldCheck className="w-6 h-6" />
               </div>
               <div>
@@ -196,7 +196,7 @@ export default function UniversitiesColleges() {
                 placeholder="Search universities or colleges..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-11 pr-4 py-3 rounded-xl border border-slate-200 bg-slate-50 text-xs text-[#11181C] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-550 transition-all font-semibold"
+                className="w-full pl-11 pr-4 py-3 rounded-xl border border-slate-200 bg-slate-50 text-xs text-[#11181C] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all font-semibold"
               />
             </div>
           </div>
@@ -218,7 +218,7 @@ export default function UniversitiesColleges() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.3 }}
-                    className="bg-white border border-slate-200 p-6 rounded-[2rem] flex flex-col justify-between hover:shadow-xl hover:border-slate-350 hover:-translate-y-1 transition-all duration-300 relative group overflow-hidden"
+                    className="bg-white border border-slate-200 p-6 rounded-[2rem] flex flex-col justify-between hover:shadow-xl hover:border-slate-300 hover:-translate-y-1 transition-all duration-300 relative group overflow-hidden"
                   >
                     <div className="absolute top-0 right-0 w-20 h-20 bg-slate-50 rounded-bl-full pointer-events-none group-hover:bg-blue-50/20 transition-colors" />
                     <div className="relative z-10">
@@ -248,7 +248,7 @@ export default function UniversitiesColleges() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.3 }}
-                    className="bg-white border border-slate-200 p-6 rounded-[2rem] flex flex-col justify-between hover:shadow-xl hover:border-red-350 hover:-translate-y-1 transition-all duration-300 relative group overflow-hidden"
+                    className="bg-white border border-slate-200 p-6 rounded-[2rem] flex flex-col justify-between hover:shadow-xl hover:border-red-300 hover:-translate-y-1 transition-all duration-300 relative group overflow-hidden"
                   >
                     <div className="absolute top-0 right-0 w-20 h-20 bg-slate-50 rounded-bl-full pointer-events-none group-hover:bg-red-50/20 transition-colors" />
                     <div className="relative z-10">
@@ -272,7 +272,7 @@ export default function UniversitiesColleges() {
           {/* Empty State */}
           {totalResults === 0 && (
             <div className="text-center py-16 bg-white border border-slate-200 rounded-[2.5rem] shadow-inner">
-              <HelpCircle className="w-12 h-12 text-slate-350 mx-auto mb-4" />
+              <HelpCircle className="w-12 h-12 text-slate-300 mx-auto mb-4" />
               <h3 className="text-lg font-bold text-slate-900">No matching institutions found</h3>
               <p className="text-slate-400 text-xs mt-1">Try refining your search terms or changing your filter.</p>
             </div>
@@ -301,31 +301,34 @@ export default function UniversitiesColleges() {
             {/* Right side text content */}
             <div className="lg:col-span-7 space-y-6">
               <div className="flex items-center gap-3">
-                <span className="text-xs font-bold text-[#124b8d] tracking-widest uppercase border border-blue-200 bg-blue-50/50 px-3 py-1 rounded-full">AEC Guidance</span>
+                <span className="text-xs font-bold text-[#124b8d] tracking-widest uppercase border border-blue-200 bg-blue-50/50 px-3 py-1 rounded-full">Application Journey</span>
               </div>
               <h2 className="text-4xl font-medium tracking-tight text-[#11181C] leading-[1.1]">
-                Our University Placement Services
+                From Shortlist to Offer Letter
               </h2>
+              <p className="text-slate-500 text-base leading-relaxed">
+                Once you have explored the directory above, AEC manages the full admissions process so you can apply to the right institutions with confidence.
+              </p>
               <ul className="space-y-3 text-slate-600 text-base">
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#124b8d] mt-2.5 shrink-0" />
-                  <span>Institution selection based on academic profile & budget</span>
+                  <span>Shortlist universities and colleges that match your profile, budget, and intake</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#124b8d] mt-2.5 shrink-0" />
-                  <span>Pathway options for students without direct entry eligibility</span>
+                  <span>Lodge multiple applications in parallel to secure the strongest offer</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#124b8d] mt-2.5 shrink-0" />
-                  <span>Multi-institution applications to improve visa success</span>
+                  <span>Compare Letters of Offer, scholarship amounts, and start dates side by side</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#124b8d] mt-2.5 shrink-0" />
-                  <span>Clear comparison of tuition fees, locations, and intakes</span>
+                  <span>Accept, pay, and convert your offer into a Confirmation of Enrolment (CoE)</span>
                 </li>
               </ul>
               <p className="text-slate-700 font-semibold text-base leading-relaxed">
-                We ensure students are placed in <strong>genuine, accredited institutions</strong> that match both education and career goals.
+                Every placement is with a <strong>genuine, CRICOS-registered institution</strong> that protects your visa status and career goals.
               </p>
               <div className="pt-4">
                 <Link href="/contact">

@@ -213,7 +213,7 @@ export default function UniversityTours() {
             <h2 className="font-heading text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">
               Tour Formats
             </h2>
-            <p className="text-slate-505 text-sm md:text-base font-light">Select a tab below to compare Classic, Comprehensive, and Premium VIP structures.</p>
+            <p className="text-slate-500 text-sm md:text-base font-light">Select a tab below to compare Classic, Comprehensive, and Premium VIP structures.</p>
           </div>
 
           {/* Tabs header */}
@@ -340,7 +340,7 @@ export default function UniversityTours() {
             ].map((adv, idx) => (
               <div 
                 key={idx} 
-                className="bg-white border border-slate-200/80 p-6 rounded-[2rem] shadow-sm hover:shadow-xl hover:border-slate-350 hover:-translate-y-1 transition-all duration-300 relative group flex flex-col justify-between"
+                className="bg-white border border-slate-200/80 p-6 rounded-[2rem] shadow-sm hover:shadow-xl hover:border-slate-300 hover:-translate-y-1 transition-all duration-300 relative group flex flex-col justify-between"
               >
                 <div className="absolute top-0 right-0 w-16 h-16 bg-slate-50 rounded-bl-full pointer-events-none group-hover:bg-blue-50/20 transition-colors" />
                 <div className="relative z-10 space-y-4">

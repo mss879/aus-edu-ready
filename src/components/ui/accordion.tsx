@@ -24,7 +24,7 @@ export function Accordion({ items }: AccordionProps) {
         return (
           <div 
             key={index} 
-            className="border border-slate-200 rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md hover:border-slate-350 transition-all duration-300"
+            className="border border-slate-200 rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-300"
           >
             <button
               className={cn(

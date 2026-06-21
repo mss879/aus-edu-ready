@@ -322,9 +322,9 @@ export default function StudyInAustralia() {
                 { title: "Financial & Location Modeling", desc: "Analyze tuition fees, scholarships, living indices, intakes, and career opportunities dynamically." },
                 { title: "Accredited Counseling", desc: "Focus strictly on accredited institutions that protect your visa status and long-term residency plans." }
               ].map((service, idx) => (
-                <div key={idx} className="bg-slate-50/50 border border-slate-200 p-6 rounded-2xl flex flex-col justify-between hover:shadow-xl hover:border-slate-350 hover:-translate-y-1 transition-all duration-300">
+                <div key={idx} className="bg-slate-50/50 border border-slate-200 p-6 rounded-2xl flex flex-col justify-between hover:shadow-xl hover:border-slate-300 hover:-translate-y-1 transition-all duration-300">
                   <div>
-                    <div className="w-8 h-8 rounded-full bg-slate-100 text-[#124b8d] flex items-center justify-center mb-4 font-mono text-xs font-bold border border-slate-250">
+                    <div className="w-8 h-8 rounded-full bg-slate-100 text-[#124b8d] flex items-center justify-center mb-4 font-mono text-xs font-bold border border-slate-200">
                       0{idx + 1}
                     </div>
                     <h3 className="font-bold text-lg text-slate-900 mb-2">{service.title}</h3>
@@ -351,7 +351,7 @@ export default function StudyInAustralia() {
             Experience real Australian university campus life, explore cities, examine accommodations, join hands-on STEM workshops, and consult with student teams BEFORE making a major investment.
           </p>
           
-          <div className="relative rounded-[2rem] overflow-hidden h-[300px] w-full max-w-3xl mx-auto border border-slate-250 shadow-lg group">
+          <div className="relative rounded-[2rem] overflow-hidden h-[300px] w-full max-w-3xl mx-auto border border-slate-200 shadow-lg group">
             <Image 
               src="/university_tours.png" 
               alt="University Exploration Tours" 

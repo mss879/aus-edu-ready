@@ -61,7 +61,7 @@ export default function Scholarships() {
               {scholarshipTypes.map((sch, idx) => (
                 <div 
                   key={idx} 
-                  className="bg-white border border-slate-205 p-6 rounded-[2rem] flex flex-col justify-between hover:shadow-xl hover:border-slate-350 hover:-translate-y-1 transition-all duration-300 relative group overflow-hidden"
+                  className="bg-white border border-slate-200 p-6 rounded-[2rem] flex flex-col justify-between hover:shadow-xl hover:border-slate-300 hover:-translate-y-1 transition-all duration-300 relative group overflow-hidden"
                 >
                   <div className="absolute top-0 right-0 w-24 h-24 bg-slate-50 rounded-bl-full pointer-events-none group-hover:bg-blue-50/20 transition-colors" />
                   <div className="relative z-10">
@@ -69,7 +69,7 @@ export default function Scholarships() {
                       {sch.icon}
                     </div>
                     <h3 className="font-bold text-lg text-[#11181C] mb-3">{sch.title}</h3>
-                    <p className="text-slate-505 text-sm leading-relaxed">{sch.desc}</p>
+                    <p className="text-slate-500 text-sm leading-relaxed">{sch.desc}</p>
                   </div>
                 </div>
               ))}
@@ -81,7 +81,7 @@ export default function Scholarships() {
               <div>
                 <span className="text-[10px] font-black uppercase tracking-wider text-[#124b8d] bg-blue-50 border border-blue-100 px-3 py-1.5 rounded-full inline-block mb-6">Affordable Future</span>
                 <h3 className="text-2xl font-semibold text-[#11181C] mb-4">Minimize Your Living & Education Cost</h3>
-                <p className="text-slate-505 text-sm leading-relaxed mb-6">
+                <p className="text-slate-500 text-sm leading-relaxed mb-6">
                   Up to 30% academic tuition fee discounts are automatically applied for high-achieving applicants. Plan early to match application deadlines.
                 </p>
               </div>
@@ -111,7 +111,7 @@ export default function Scholarships() {
               <h2 className="text-4xl md:text-[2.75rem] font-medium tracking-tight text-[#11181C] leading-[1.1]">
                 Our Scholarship Support
               </h2>
-              <p className="text-slate-505 text-lg leading-relaxed">
+              <p className="text-slate-500 text-lg leading-relaxed">
                 We analyze your profile to identify the maximum possible tuition reductions, and coordinate the complete documentation process.
               </p>
 
@@ -139,7 +139,7 @@ export default function Scholarships() {
                 { title: "Application assistance and documentation support", desc: "Draft and structure statements of purpose (SOPs), CVs, and references to present an elite academic profile." },
                 { title: "Guidance on deadlines and conditions", desc: "Detailed brief on academic GPA maintenance rules, deadlines, and renewal criteria." }
               ].map((step, idx) => (
-                <div key={idx} className="bg-slate-50/50 border border-slate-200 p-6 rounded-2xl flex flex-col justify-between hover:shadow-xl hover:border-slate-350 hover:-translate-y-1 transition-all duration-300">
+                <div key={idx} className="bg-slate-50/50 border border-slate-200 p-6 rounded-2xl flex flex-col justify-between hover:shadow-xl hover:border-slate-300 hover:-translate-y-1 transition-all duration-300">
                   <div>
                     <div className="w-8 h-8 rounded-full bg-slate-100 text-[#124b8d] border border-slate-200 flex items-center justify-center mb-4 font-mono text-xs font-bold">
                       0{idx + 1}
@@ -170,7 +170,7 @@ export default function Scholarships() {
             <h2 className="text-3xl font-semibold tracking-tight text-[#11181C]">
               Check Your Scholarship Eligibility
             </h2>
-            <p className="text-slate-505 max-w-2xl mx-auto text-base">
+            <p className="text-slate-500 max-w-2xl mx-auto text-base">
               Secure your complete fee assessment today. Fill out our simple counseling booking form, and our MARA & PIER certified teams will calculate your exact scholarship potential in Australia.
             </p>
 
