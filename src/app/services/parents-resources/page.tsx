@@ -54,7 +54,7 @@ export default function ParentsResources() {
             <div className="lg:col-span-5 relative flex justify-center items-center h-[320px]">
               <div className="absolute inset-0 bg-slate-200/30 blur-3xl rounded-full z-0 pointer-events-none" />
               <div className="relative w-64 h-80 rounded-[2rem] overflow-hidden border border-white/20 shadow-2xl rotate-[-6deg] group hover:rotate-0 transition-transform duration-500 z-10">
-                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2940&auto=format&fit=crop" alt="Parents" className="w-full h-full object-cover" />
+                <img src="/parents_meeting.jpg" alt="Parents in a counselling session with AEC" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>

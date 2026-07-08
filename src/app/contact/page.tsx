@@ -8,7 +8,7 @@ import {
   MapPin, Phone, Mail, Clock, Globe2, 
   CheckCircle2, Star, ArrowUpRight, MessageSquare, Compass
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 30 },
@@ -40,16 +40,16 @@ const offices = [
   {
     city: "Adelaide Office",
     name: "Australian Education Centre",
-    address: "Level 1, 90 King William Street, Adelaide, South Australia 5000, Australia",
-    phone: "+61 489 980 366",
+    address: "35 Golflinks Road, Adelaide, SA 5152, Australia",
+    phone: "+61 432 110 997",
     email: "adelaide@multinational.com.au",
     hours: ["Monday - Friday: 9:00 AM to 5:30 PM"]
   },
   {
     city: "Dubai Office",
     name: "Australian Education Centre",
-    address: "Office 9, Level 17, Boulevard Plaza Tower 1, Sheikh Mohammed Bin Rashid Boulevard, Downtown Dubai, United Arab Emirates",
-    phone: "+971 58 596 0366",
+    address: "Shams Business Center, Sharjah Media City Free Zone, Al Messaned, Sharjah, United Arab Emirates",
+    phone: "+971 50 779 4262",
     email: "dubai@multinational.com.au",
     hours: ["Monday - Friday: 9:00 AM to 5:30 PM"]
   }
@@ -76,6 +76,22 @@ const testimonials = [
   }
 ];
 
+const interestLabels: Record<string, string> = {
+  general: "General Enquiry",
+  australia: "Study in Australia",
+  worldwide: "Study Worldwide",
+  pr: "PR Pathway Planning",
+  family: "Partner & Family Visas",
+  schools: "Australian Schools Sector",
+  tours: "University Exploration Tours",
+  parents: "Parents: Info Session / Webinar",
+  scholarships: "Scholarships",
+  ielts: "IELTS & PTE Test Prep",
+  settlement: "Pre-Departure & Settlement",
+  career: "Career & Job Placement",
+  resources: "Free Guides & Resources",
+};
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -87,6 +103,25 @@ export default function Contact() {
   });
   
   const [submitted, setSubmitted] = useState(false);
+
+  // Preselect the enquiry topic (and prefill a country) from the URL so that the
+  // many CTAs across the site (?interest=…, ?country=…, ?booking=true) land here ready to send.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    const interest = params.get("interest");
+    const country = params.get("country");
+    const booking = params.get("booking");
+    const validInterests = ["general", "australia", "worldwide", "pr", "family", "schools", "tours", "parents", "scholarships", "ielts", "settlement", "career", "resources"];
+    setFormData((prev) => {
+      const next = { ...prev };
+      if (interest && validInterests.includes(interest)) next.interest = interest;
+      else if (country) next.interest = country.toLowerCase().includes("australia") ? "australia" : "worldwide";
+      else if (booking === "true" && !prev.interest) next.interest = "general";
+      if (country && !prev.message) next.message = `I'm interested in studying in ${country}.`;
+      return next;
+    });
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -202,13 +237,19 @@ export default function Contact() {
                         className="w-full h-12 px-4 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/30 text-sm text-slate-900"
                       >
                         <option value="">Select a service focus</option>
+                        <option value="general">General Enquiry</option>
                         <option value="australia">Study in Australia</option>
                         <option value="worldwide">Study Worldwide</option>
                         <option value="pr">PR Pathway Planning</option>
                         <option value="family">Partner & Family Visas</option>
                         <option value="schools">Australian Schools Sector</option>
                         <option value="tours">University Exploration Tours</option>
+                        <option value="parents">Parents: Info Session / Webinar</option>
+                        <option value="scholarships">Scholarships</option>
                         <option value="ielts">IELTS & PTE Test Prep</option>
+                        <option value="settlement">Pre-Departure & Settlement</option>
+                        <option value="career">Career & Job Placement</option>
+                        <option value="resources">Free Guides & Resources</option>
                       </select>
                     </div>
 
@@ -237,7 +278,7 @@ export default function Contact() {
                   </div>
                   <h3 className="text-2xl font-bold text-[#11181C]">Consultation Request Received!</h3>
                   <p className="text-slate-500 text-sm max-w-md mx-auto leading-relaxed">
-                    Thank you, {formData.firstName}. Your interest in {formData.interest} has been logged. One of our qualified counselors will contact you shortly via email or phone to confirm details.
+                    Thank you, {formData.firstName}. Your interest in {interestLabels[formData.interest] || "your enquiry"} has been logged. One of our qualified counselors will contact you shortly via email or phone to confirm details.
                   </p>
                   <Button variant="outline" className="font-bold rounded-full border-slate-300 text-slate-700 bg-white hover:bg-slate-50" onClick={() => setSubmitted(false)}>Submit Another Request</Button>
                 </motion.div>
@@ -277,6 +318,28 @@ export default function Contact() {
                     <span className="font-bold">9:30 AM to 5:30 PM</span>
                   </div>
                 </div>
+              </div>
+
+              {/* Direct department contacts */}
+              <div className="bg-white border border-slate-200 p-6 rounded-2xl space-y-4 shadow-sm">
+                <h3 className="font-bold text-base text-[#11181C] flex items-center">
+                  <Mail className="w-5 h-5 mr-2 text-[#124b8d]" /> Direct Department Emails
+                </h3>
+                <ul className="text-xs text-slate-500 space-y-2">
+                  {[
+                    { label: "General Inquiries", email: "info@multinational.com.au" },
+                    { label: "University Applications", email: "edu@multinational.com.au" },
+                    { label: "Visa Services", email: "visa@multinational.com.au" },
+                    { label: "University Tours", email: "tours@multinational.com.au" },
+                    { label: "Scholarships", email: "scholarships@multinational.com.au" },
+                    { label: "English Preparation", email: "english@multinational.com.au" },
+                  ].map((dept) => (
+                    <li key={dept.email} className="flex justify-between gap-3 border-b border-slate-100 pb-1.5 last:border-0 last:pb-0">
+                      <span>{dept.label}</span>
+                      <a href={`mailto:${dept.email}`} className="font-semibold text-[#124b8d] hover:text-[#e31b23] transition-colors break-all text-right">{dept.email}</a>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
 

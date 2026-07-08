@@ -25,7 +25,7 @@ export function Footer() {
               <a href="#" aria-label="Facebook" className="w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center text-[#124b8d] hover:bg-[#e31b23] hover:text-white transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
               </a>
-              <a href="#" aria-label="Instagram" className="w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center text-[#124b8d] hover:bg-[#e31b23] hover:text-white transition-colors">
+              <a href="https://www.instagram.com/aec_srilanka/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center text-[#124b8d] hover:bg-[#e31b23] hover:text-white transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
               </a>
               <a href="#" aria-label="LinkedIn" className="w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center text-[#124b8d] hover:bg-[#e31b23] hover:text-white transition-colors">
@@ -41,6 +41,7 @@ export function Footer() {
               <li><Link href="/study-in-australia" className="hover:text-[#e31b23] transition-colors">Study in Australia</Link></li>
               <li><Link href="/study-worldwide" className="hover:text-[#e31b23] transition-colors">Study Worldwide</Link></li>
               <li><Link href="/services" className="hover:text-[#e31b23] transition-colors">Our Services</Link></li>
+              <li><Link href="/insights" className="hover:text-[#e31b23] transition-colors">Guides &amp; Insights</Link></li>
               <li><Link href="/about" className="hover:text-[#e31b23] transition-colors">About Us</Link></li>
               <li><Link href="/contact" className="hover:text-[#e31b23] transition-colors">Contact Us</Link></li>
             </ul>
@@ -51,9 +52,11 @@ export function Footer() {
             <h4 className="font-bold text-[#0c3463]">Our Offices</h4>
             <ul className="flex flex-col gap-2 text-sm text-slate-500">
               <li>Melbourne · Adelaide · Colombo · Dubai</li>
-              <li><a href="https://wa.me/94773950448" className="hover:text-[#e31b23] transition-colors">+94 77 395 0448</a></li>
+              <li><a href="tel:+94115500100" className="hover:text-[#e31b23] transition-colors">+94 11 5500100</a></li>
+              <li><a href="https://wa.me/94773950448" className="hover:text-[#e31b23] transition-colors">WhatsApp: +94 77 395 0448</a></li>
               <li><a href="mailto:edu@multinational.com.au" className="hover:text-[#e31b23] transition-colors">edu@multinational.com.au</a></li>
-              <li>Mon-Fri: 9am - 5pm</li>
+              <li className="pt-1">Colombo: Mon–Fri 8:30 AM–6:30 PM</li>
+              <li>Sat 9:30 AM–5:30 PM · 2nd &amp; 4th Sun 9:30 AM–5:30 PM</li>
             </ul>
           </div>
 

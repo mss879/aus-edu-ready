@@ -9,6 +9,7 @@ import {
   MapPin, Clock, ArrowUpRight, Compass, HelpCircle, ChevronDown, ChevronRight 
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { countries } from "@/data/countries";
 
 const compareData = [
@@ -68,10 +69,24 @@ export default function StudyWorldwidePortal() {
   const compareB = compareData.find(item => item.dest === selectedCountryB) || compareData[1];
   const compareC = compareData.find(item => item.dest === selectedCountryC) || compareData[2];
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: worldwideFAQs.map((f) => ({
+      "@type": "Question",
+      name: f.title,
+      acceptedAnswer: { "@type": "Answer", text: f.content },
+    })),
+  };
+
   return (
     <div className="flex flex-col w-full bg-white text-slate-900">
-      <PageHero 
-        title="Study Worldwide" 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <PageHero
+        title="Study Worldwide"
         subtitle="Explore quality educational opportunities across 20+ global destinations with AEC."
         breadcrumb="Study Worldwide"
         bgImage="https://images.unsplash.com/photo-1526778548025-fa2fbf8b1bb3?q=80&w=2940&auto=format&fit=crop"
@@ -118,16 +133,19 @@ export default function StudyWorldwidePortal() {
                 className="group rounded-2xl overflow-hidden border border-slate-200/80 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.015)] hover:shadow-[0_14px_34px_rgba(12,52,99,0.10)] hover:-translate-y-1 transition-all duration-300 h-full flex flex-col justify-between"
               >
                 <div>
-                  <div className="relative h-44 overflow-hidden">
+                  <div className="relative h-44 overflow-hidden bg-[#0c3463]">
                     {country.image ? (
-                      <img
+                      <Image
                         src={country.image}
                         alt={country.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover group-hover:scale-105 transition-transform duration-700"
                       />
                     ) : (
-                      <div className="w-full h-full flex items-center justify-center bg-[radial-gradient(ellipse_at_top,#1d6fd4_0%,#124b8d_45%,#0c3463_100%)]">
-                        <span className="text-6xl drop-shadow-lg" aria-hidden>{country.flag}</span>
+                      <div className="w-full h-full flex flex-col items-center justify-center gap-2 bg-[radial-gradient(ellipse_at_top,#1d6fd4_0%,#124b8d_45%,#0c3463_100%)] text-white">
+                        <Globe2 className="w-9 h-9 opacity-80" />
+                        <span className="text-lg font-black tracking-tight px-4 text-center leading-tight">{country.name}</span>
                       </div>
                     )}
                     <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-lg text-xs font-bold uppercase tracking-wider text-[#124b8d] border border-white/60 flex items-center gap-1.5">
