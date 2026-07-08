@@ -47,10 +47,24 @@ export default function StudyInAustraliaFAQs() {
     setOpenIndex(openIndex === idx ? null : idx);
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqsList.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
   return (
     <div className="flex flex-col w-full bg-white text-slate-900">
-      <PageHero 
-        title="Frequently Asked Questions" 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <PageHero
+        title="Frequently Asked Questions"
         subtitle="Get quick answers regarding studying, working, and PR pathways in Australia."
         breadcrumb="Study in Australia / FAQs"
         bgImage="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2940&auto=format&fit=crop"

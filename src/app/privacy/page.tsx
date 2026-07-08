@@ -2,12 +2,9 @@ import { PageHero } from "@/components/ui/page-hero";
 import { Button } from "@/components/ui/button";
 import { ShieldCheck, Mail } from "lucide-react";
 import Link from "next/link";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
-  title: "Privacy Policy | Australian Education Centre",
-  description:
-    "How Australian Education Centre collects, uses, and protects the information you share with us.",
-};
+export const metadata = pageMeta("/privacy");
 
 export default function PrivacyPolicy() {
   return (

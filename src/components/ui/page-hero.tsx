@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 interface PageHeroProps {
   title: string;
@@ -28,6 +29,19 @@ export function PageHero({ title, subtitle, breadcrumb, bgImage = "https://image
     <section className="relative w-full min-h-[42vh] md:min-h-[48vh] flex items-center justify-center overflow-hidden bg-[#0c3463] pt-28 pb-14">
       {/* Navy brand gradient + royal-blue glow */}
       <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_0%,#1d6fd4_0%,#124b8d_38%,#0c3463_75%)]" />
+      {/* Background Image blended */}
+      {bgImage && (
+        <div className="absolute inset-0 z-0 opacity-20 pointer-events-none mix-blend-overlay">
+          <Image
+            src={bgImage}
+            alt={title}
+            fill
+            priority
+            className="object-cover object-center"
+          />
+        </div>
+      )}
+
       {/* Faint grid texture */}
       <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_60%,transparent_100%)]" />
       {/* Red brand accent bar at the bottom edge */}

@@ -143,9 +143,9 @@ export default function UniversityTours() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Image Side */}
             <div className="lg:col-span-5 relative h-[420px] rounded-[2.5rem] overflow-hidden border border-slate-200 shadow-lg group">
-              <img 
-                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2940&auto=format&fit=crop" 
-                alt="Students on campus" 
+              <img
+                src="/university_tours.png"
+                alt="Students on an Australian university campus tour"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />

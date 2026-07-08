@@ -71,7 +71,7 @@ export default function PreDeparture() {
             <div className="pt-4 flex justify-center">
               <Link href="/contact">
                 <Button size="lg" className="bg-[#124b8d] hover:bg-[#0e3d72] text-white rounded-full font-bold shadow-[0_10px_25px_rgba(18,75,141,0.25)] hover:shadow-[0_15px_30px_rgba(18,75,141,0.4)] hover:-translate-y-0.5 transition-all duration-300 px-8 py-6 h-auto inline-flex items-center justify-center gap-2 group border border-transparent">
-                  <span>Download Pre-Departure Checklist</span>
+                  <span>Request Pre-Departure Checklist</span>
                   <ChevronRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
                 </Button>
               </Link>

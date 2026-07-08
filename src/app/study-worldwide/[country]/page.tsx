@@ -1,12 +1,52 @@
+import type { Metadata } from "next";
 import { countries } from "@/data/countries";
 import { PageHero } from "@/components/ui/page-hero";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, GraduationCap, Wallet, Clock, Sparkles, ChevronRight, ArrowLeft, BookOpen } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { siteConfig } from "@/lib/site";
 
 export function generateStaticParams() {
   return countries.map((country) => ({ country: country.id }));
+}
+
+function truncate(text: string, max = 158): string {
+  if (text.length <= max) return text;
+  return text.slice(0, text.lastIndexOf(" ", max - 1)).trimEnd() + "…";
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ country: string }> }): Promise<Metadata> {
+  const { country: countryId } = await params;
+  const country = countries.find((c) => c.id === countryId);
+  if (!country) return { title: "Destination Not Found" };
+
+  const title = `Study in ${country.name} from Sri Lanka | AEC`;
+  const description = truncate(country.description);
+  const canonical = `/study-worldwide/${country.id}`;
+  const image = country.image && country.image.startsWith("/") ? country.image : siteConfig.ogImage;
+
+  return {
+    title,
+    description,
+    keywords: [
+      `study in ${country.name}`,
+      `${country.name} student visa`,
+      `study abroad ${country.name}`,
+      `${country.name} universities`,
+      "study abroad from Sri Lanka",
+    ],
+    alternates: { canonical },
+    openGraph: {
+      title,
+      description,
+      url: canonical,
+      siteName: siteConfig.name,
+      type: "website",
+      images: [{ url: image, alt: `Study in ${country.name}` }],
+    },
+    twitter: { card: "summary_large_image", title, description, images: [image] },
+  };
 }
 
 export default async function CountryPage({ params }: { params: Promise<{ country: string }> }) {
@@ -16,8 +56,22 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
 
   const eligibilityHref = `/contact?country=${encodeURIComponent(country.name)}#consultation`;
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.url },
+      { "@type": "ListItem", position: 2, name: "Study Worldwide", item: `${siteConfig.url}/study-worldwide` },
+      { "@type": "ListItem", position: 3, name: country.name, item: `${siteConfig.url}/study-worldwide/${country.id}` },
+    ],
+  };
+
   return (
     <div className="flex flex-col w-full bg-white text-slate-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <PageHero
         title={`Study in ${country.name}`}
         subtitle={country.tagline}

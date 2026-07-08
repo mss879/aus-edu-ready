@@ -76,7 +76,7 @@ export default function PartnerFamilyVisas() {
         {/* Background Image with soft light overlay */}
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-10 mix-blend-multiply scale-105" 
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?q=80&w=2940&auto=format&fit=crop')" }}
+          style={{ backgroundImage: "url('/family_together.jpg')" }}
         />
 
         <div className="container relative z-10 px-4 mx-auto max-w-7xl">
@@ -293,10 +293,10 @@ export default function PartnerFamilyVisas() {
               </div>
 
               <div className="bg-white border border-slate-100 p-6 rounded-2xl flex flex-col justify-between shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-300 justify-center items-center text-center p-8 bg-blue-50/20">
-                <h4 className="font-bold text-base text-[#11181C] mb-1">Calculate Your Potential</h4>
-                <p className="text-slate-500 text-sm font-medium mb-4">Determine the complete family budget mapping.</p>
-                <Link href="/contact">
-                  <Button size="sm" className="bg-[#124b8d] hover:bg-[#0e3d72] text-white rounded-full font-bold shadow-[0_4px_12px_rgba(18,75,141,0.2)] hover:shadow-[0_6px_20px_rgba(18,75,141,0.35)] hover:-translate-y-0.5 transition-all duration-300">Calculate Plan</Button>
+                <h4 className="font-bold text-base text-[#11181C] mb-1">Plan Your Family Budget</h4>
+                <p className="text-slate-500 text-sm font-medium mb-4">Get a complete family budget mapping from our advisors.</p>
+                <Link href="/contact?interest=family">
+                  <Button size="sm" className="bg-[#124b8d] hover:bg-[#0e3d72] text-white rounded-full font-bold shadow-[0_4px_12px_rgba(18,75,141,0.2)] hover:shadow-[0_6px_20px_rgba(18,75,141,0.35)] hover:-translate-y-0.5 transition-all duration-300">Request Family Budget Mapping</Button>
                 </Link>
               </div>
             </div>

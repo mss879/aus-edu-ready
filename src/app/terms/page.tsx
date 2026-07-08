@@ -2,12 +2,9 @@ import { PageHero } from "@/components/ui/page-hero";
 import { Button } from "@/components/ui/button";
 import { ScrollText, Mail } from "lucide-react";
 import Link from "next/link";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
-  title: "Terms & Conditions | Australian Education Centre",
-  description:
-    "The terms that apply to your use of the Australian Education Centre website and services.",
-};
+export const metadata = pageMeta("/terms");
 
 export default function TermsConditions() {
   return (

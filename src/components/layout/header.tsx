@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { Menu, X, ChevronDown, ArrowUpRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -112,6 +111,7 @@ const navLinks: NavLink[] = [
           { name: "IELTS / PTE Preparation", href: "/services/ielts-pte" },
           { name: "Partner & Family Visa Services", href: "/services/partner-family" },
           { name: "For Parents: Resources", href: "/services/parents-resources" },
+          { name: "Guides & Insights", href: "/insights" },
         ]
       }
     ]
@@ -141,11 +141,13 @@ const navLinks: NavLink[] = [
 export function Header() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
     setIsMobileOpen(false);
     setActiveDropdown(null);
+    setMobileExpanded(null);
   }, [pathname]);
 
   useEffect(() => {
@@ -296,26 +298,64 @@ export function Header() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="xl:hidden fixed inset-0 top-24 z-40 bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl border-t border-slate-100 dark:border-slate-800 flex flex-col h-[calc(100vh-96px)]"
+            className="xl:hidden fixed inset-0 top-28 z-40 bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl border-t border-slate-100 dark:border-slate-800 flex flex-col h-[calc(100vh-112px)]"
           >
             <div className="flex-1 overflow-y-auto p-6">
-              <nav className="flex flex-col gap-4">
-                {navLinks.map((link) => (
-                  <div key={link.name} className="flex flex-col border-b border-slate-100 dark:border-slate-800 pb-4">
-                    <div className="flex items-center justify-between">
-                      <Link
-                        href={link.href}
-                        onClick={(e) => link.megaMenu && e.preventDefault()}
-                        className="text-xl font-bold text-slate-900 dark:text-white"
-                      >
-                        {link.name}
-                      </Link>
+              <nav className="flex flex-col gap-2">
+                {navLinks.map((link) => {
+                  const isExpanded = mobileExpanded === link.name;
+                  return (
+                    <div key={link.name} className="flex flex-col border-b border-slate-100 dark:border-slate-800 pb-2">
+                      <div className="flex items-center justify-between">
+                        <Link
+                          href={link.href}
+                          className="flex-1 text-xl font-bold text-slate-900 dark:text-white py-2"
+                        >
+                          {link.name}
+                        </Link>
+                        {link.megaMenu && (
+                          <button
+                            type="button"
+                            aria-label={`Toggle ${link.name} menu`}
+                            aria-expanded={isExpanded}
+                            onClick={() => setMobileExpanded(isExpanded ? null : link.name)}
+                            className="p-2 -mr-2 text-slate-500 hover:text-blue-600 transition-colors"
+                          >
+                            <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${isExpanded ? "rotate-180" : ""}`} />
+                          </button>
+                        )}
+                      </div>
+
+                      {/* Expandable sub-links */}
                       {link.megaMenu && (
-                        <ChevronDown className="w-5 h-5 opacity-50" />
+                        <div className={`grid transition-all duration-300 ease-in-out ${isExpanded ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
+                          <div className="overflow-hidden">
+                            <div className="flex flex-col gap-1 pb-3 pl-1">
+                              {link.megaMenu.map((section, sIdx) => (
+                                <div key={sIdx} className="flex flex-col">
+                                  {section.title && (
+                                    <span className="text-[11px] font-black uppercase tracking-widest text-slate-400 mt-3 mb-1">
+                                      {section.title}
+                                    </span>
+                                  )}
+                                  {section.links.map((sublink) => (
+                                    <Link
+                                      key={sublink.href}
+                                      href={sublink.href}
+                                      className="text-base font-semibold text-slate-600 dark:text-slate-300 hover:text-blue-600 transition-colors py-2 pl-3 border-l-2 border-slate-100 dark:border-slate-800 hover:border-blue-600"
+                                    >
+                                      {sublink.name}
+                                    </Link>
+                                  ))}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
                       )}
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </nav>
             </div>
             <div className="p-6 border-t border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 shrink-0">
