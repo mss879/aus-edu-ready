@@ -44,24 +44,34 @@ export default function UniversitiesColleges() {
   // "Universities" from the mega-menu, which only updates the hash and does not
   // remount this component).
   //
-  // The mega-menu links target #pathway / #universities on THIS same page. The
-  // Next.js App Router performs those as history.pushState navigations through
-  // its own patched history, which does NOT fire the native "hashchange" event.
-  // So we can't rely on hashchange alone: we also poll window.location.hash,
-  // which reflects the new value regardless of how the router navigated.
+  // Two App Router quirks are handled here:
+  //  1. The mega-menu links target #pathway / #universities on THIS same page.
+  //     The router performs those as history.pushState navigations that do NOT
+  //     fire the native "hashchange" event, so we also poll window.location.hash.
+  //  2. In the PRODUCTION build, navigating between these two anchors while
+  //     already on the page appends rather than replaces the hash, producing a
+  //     doubled value like "#universities#pathway". So we read the LAST segment
+  //     (always the intended target) and tidy the address bar back to one hash.
   useEffect(() => {
     if (typeof window === "undefined") return;
 
     let lastHash = window.location.hash;
     const applyHash = (scroll: boolean) => {
-      const hash = window.location.hash;
-      if (hash === "#pathway") {
-        setActiveFilter("colleges");
-      } else if (hash === "#universities") {
-        setActiveFilter("universities");
-      } else {
-        return;
+      const segments = window.location.hash.split("#").filter(Boolean);
+      const target = segments[segments.length - 1] || "";
+      if (target !== "pathway" && target !== "universities") return;
+
+      // Collapse a doubled hash (e.g. "#universities#pathway") to "#pathway".
+      if (segments.length > 1) {
+        window.history.replaceState(
+          null,
+          "",
+          window.location.pathname + window.location.search + "#" + target
+        );
+        lastHash = window.location.hash;
       }
+
+      setActiveFilter(target === "pathway" ? "colleges" : "universities");
       if (scroll) {
         document
           .getElementById("directory-section")
