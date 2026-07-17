@@ -18,8 +18,9 @@ export const siteConfig = {
   phone: "+94115500100",
   whatsapp: "+94773950448",
   socials: {
-    instagram: "https://www.instagram.com/aec_srilanka/",
-    // TODO(client): supply the real Facebook, LinkedIn & YouTube URLs.
+    instagram: "https://www.instagram.com/australian_edu/",
+    facebook: "https://www.facebook.com/australianeducationcentre",
+    linkedin: "https://www.linkedin.com/company/australian-education-centre/",
   },
 } as const;
 

@@ -105,7 +105,7 @@ export default function EntryPoints() {
             We highly recommend planning enrollment for the start of Year 7 (Junior Secondary) or the start of Year 9/10. Entering mid-way through Year 11 or 12 is generally <strong>not permitted</strong> by education departments, as it disrupts the mandatory final senior secondary certificate assessment frameworks.
           </p>
           <div className="pt-4">
-            <Link href="/contact">
+            <Link href="/contact?interest=schools">
               <Button size="lg" className="bg-[#124b8d] hover:bg-[#0e3d72] text-white rounded-full font-bold shadow-[0_10px_25px_rgba(18,75,141,0.25)] hover:shadow-[0_15px_30px_rgba(18,75,141,0.4)] hover:-translate-y-0.5 transition-all duration-300 px-8 py-6 h-auto inline-flex items-center gap-2 group">
                 <span>Audit Your Child&apos;s Placement Timeline</span>
                 <ChevronRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />

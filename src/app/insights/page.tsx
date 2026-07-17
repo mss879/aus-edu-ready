@@ -59,7 +59,7 @@ export default function InsightsPage() {
                 <div className="flex flex-wrap gap-4 pt-2">
                   <Link href="/contact?interest=resources">
                     <Button className="bg-[#e31b23] hover:bg-[#b81218] text-white rounded-full font-bold px-6 py-3 h-auto">
-                      Download Full Pack
+                      Request Full Pack
                     </Button>
                   </Link>
                   <Link href="/contact?booking=true">

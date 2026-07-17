@@ -185,7 +185,7 @@ export default function Scholarships() {
             </div>
 
             <div className="pt-8 flex justify-center gap-4">
-              <Link href="/contact">
+              <Link href="/contact?interest=scholarships">
                 <Button size="lg" className="bg-[#124b8d] hover:bg-[#0e3d72] text-white rounded-full font-bold shadow-[4px_4px_0px_rgba(15,23,42,1)] hover:shadow-none hover:translate-y-1 hover:translate-x-1 border-2 border-slate-900 transition-all duration-300">
                   Check My Eligibility - FREE
                 </Button>

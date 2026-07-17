@@ -541,7 +541,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Featured Destination: Australia */}
-            <Link href="/study-worldwide/australia" aria-label="Explore studying in Australia" className="block lg:col-span-2 bg-slate-100 rounded-3xl border border-slate-100 overflow-hidden relative group h-[400px] lg:h-full">
+            <Link href="/study-in-australia" aria-label="Explore studying in Australia" className="block lg:col-span-2 bg-slate-100 rounded-3xl border border-slate-100 overflow-hidden relative group h-[400px] lg:h-full">
               <Image src="/dest_australia.png" alt="Australia" fill sizes="(max-width: 1024px) 100vw, 66vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#11181C]/90 via-[#11181C]/20 to-transparent"></div>
               <div className="absolute top-6 right-6">

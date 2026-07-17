@@ -202,7 +202,7 @@ export default function PRCategories() {
             </p>
             
             <div className="pt-4 flex justify-center">
-              <Link href="/contact">
+              <Link href="/contact?interest=pr">
                 <Button size="lg" className="bg-[#124b8d] hover:bg-[#0c3463] text-white rounded-full font-bold shadow-[0_10px_25px_rgba(18,75,141,0.2)] hover:shadow-[0_15px_35px_rgba(18,75,141,0.3)] hover:-translate-y-0.5 active:translate-y-0 border-0 transition-all duration-300 px-10 py-5 h-auto text-base inline-flex items-center gap-2 group cursor-pointer">
                   Get Your PR Assessment
                   <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
