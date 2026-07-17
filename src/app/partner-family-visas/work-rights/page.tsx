@@ -46,7 +46,7 @@ export default function PartnerWorkRights() {
                 One of the major benefits of the Australian student visa framework is spousal support. Dependent partners receive work rights, enabling them to work, build professional local networks, support living expenses, and contribute to future PR points.
               </p>
               <div className="pt-4">
-                <Link href="/contact">
+                <Link href="/contact?interest=family">
                   <Button size="lg" className="bg-[#124b8d] hover:bg-[#0e3d72] text-white rounded-full font-bold shadow-[0_10px_25px_rgba(18,75,141,0.25)] hover:shadow-[0_15px_30px_rgba(18,75,141,0.4)] hover:-translate-y-0.5 transition-all duration-300 px-8 py-6 h-auto inline-flex items-center gap-2 group">
                     <span>Request Your Family Study Plan Calculation</span>
                     <ChevronRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />

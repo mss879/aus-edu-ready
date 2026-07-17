@@ -55,7 +55,7 @@ export default function VisaOptions() {
                   🛡️ <strong className="font-semibold text-slate-900">AEC Support:</strong> We assist with 485 visa preparation, skills assessment tracking, relationships compilation, health checks, and submission as part of the student support journey.
                 </div>
                 <div className="pt-4">
-                  <Link href="/contact">
+                  <Link href="/contact?interest=pr">
                     <Button size="lg" className="bg-[#124b8d] hover:bg-[#0c3463] text-white rounded-full font-bold shadow-[0_10px_25px_rgba(18,75,141,0.2)] hover:shadow-[0_15px_35px_rgba(18,75,141,0.3)] hover:-translate-y-0.5 active:translate-y-0 border-0 transition-all duration-300 px-8 py-4 h-auto inline-flex items-center gap-2 group cursor-pointer">
                       Check 485 Eligibility - FREE
                       <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
@@ -137,7 +137,7 @@ export default function VisaOptions() {
                 </div>
               </div>
               <div className="pt-6">
-                <Link href="/contact">
+                <Link href="/contact?interest=pr">
                   <Button size="lg" className="w-full bg-[#e31b23] hover:bg-[#b81218] text-white rounded-full font-bold shadow-[0_10px_25px_rgba(227,27,35,0.15)] hover:shadow-[0_15px_35px_rgba(227,27,35,0.25)] hover:-translate-y-0.5 active:translate-y-0 border-0 transition-all duration-300 px-8 py-4 h-auto inline-flex items-center justify-center gap-2 group cursor-pointer">
                     Explore Training Opportunities
                     <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
@@ -177,7 +177,7 @@ export default function VisaOptions() {
                 </div>
               </div>
               <div className="pt-6">
-                <Link href="/contact">
+                <Link href="/contact?interest=pr">
                   <Button size="lg" className="w-full bg-[#124b8d] hover:bg-[#0c3463] text-white rounded-full font-bold shadow-[0_10px_25px_rgba(18,75,141,0.2)] hover:shadow-[0_15px_35px_rgba(18,75,141,0.3)] hover:-translate-y-0.5 active:translate-y-0 border-0 transition-all duration-300 px-8 py-4 h-auto inline-flex items-center justify-center gap-2 group cursor-pointer">
                     Find Sponsoring Employers
                     <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />

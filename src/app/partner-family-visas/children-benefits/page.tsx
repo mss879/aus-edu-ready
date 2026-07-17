@@ -105,6 +105,27 @@ export default function ChildrenBenefits() {
           </div>
         </div>
       </section>
+
+      {/* Closing CTA */}
+      <section className="py-24 bg-white border-t border-slate-200">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="bg-[#0c3463] rounded-[2.5rem] p-10 lg:p-14 text-center relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-1 bg-[#e31b23]" />
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-white tracking-tight mb-4">
+              Planning Your Child&apos;s Australian Education?
+            </h2>
+            <p className="text-blue-100/80 text-base md:text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
+              Talk to our team about school enrolment, childcare options, and budgeting for your family&apos;s move to Australia.
+            </p>
+            <Link href="/contact?interest=schools" className="inline-flex">
+              <Button size="lg" className="bg-[#e31b23] hover:bg-[#b81218] text-white rounded-full font-bold px-8 py-6 h-auto inline-flex items-center gap-2 group">
+                <span>Request School Consultation</span>
+                <ArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

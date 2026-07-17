@@ -98,7 +98,7 @@ export default function UniversityTours() {
               </p>
               
               <div className="pt-6">
-                <Link href="/contact">
+                <Link href="/contact?interest=tours">
                   <Button size="lg" className="bg-[#e31b23] hover:bg-[#b81218] text-white rounded-full font-bold shadow-[0_10px_25px_rgba(227,27,35,0.2)] hover:shadow-[0_15px_35px_rgba(227,27,35,0.3)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 px-8 py-5 h-auto text-base inline-flex items-center gap-2 group border-0">
                     Secure Your Spot - Register Now
                     <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
@@ -370,7 +370,7 @@ export default function UniversityTours() {
             Parents experience: University tours, meet university staff, parent information sessions, financial planning workshops, and free time during student workshops. Complete peace of mind BEFORE a major educational investment.
           </p>
           <div className="pt-4">
-            <Link href="/contact">
+            <Link href="/contact?interest=tours">
               <Button size="lg" className="bg-[#124b8d] hover:bg-[#0c3463] text-white rounded-full font-bold shadow-[0_10px_25px_rgba(18,75,141,0.2)] hover:shadow-[0_15px_35px_rgba(18,75,141,0.3)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 px-8 py-5 h-auto text-base inline-flex items-center gap-2 group border-0">
                 Register for the Next Tour
                 <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />

@@ -90,6 +90,11 @@ const interestLabels: Record<string, string> = {
   settlement: "Pre-Departure & Settlement",
   career: "Career & Job Placement",
   resources: "Free Guides & Resources",
+  eligibility: "Eligibility Check",
+  training: "Training Opportunities",
+  courses: "Personalized Course Recommendations",
+  mbbs: "MBBS Consultation",
+  other: "Other",
 };
 
 export default function Contact() {
@@ -112,7 +117,7 @@ export default function Contact() {
     const interest = params.get("interest");
     const country = params.get("country");
     const booking = params.get("booking");
-    const validInterests = ["general", "australia", "worldwide", "pr", "family", "schools", "tours", "parents", "scholarships", "ielts", "settlement", "career", "resources"];
+    const validInterests = ["general", "australia", "worldwide", "pr", "family", "schools", "tours", "parents", "scholarships", "ielts", "settlement", "career", "resources", "eligibility", "training", "courses", "mbbs", "other"];
     setFormData((prev) => {
       const next = { ...prev };
       if (interest && validInterests.includes(interest)) next.interest = interest;
@@ -250,6 +255,11 @@ export default function Contact() {
                         <option value="settlement">Pre-Departure & Settlement</option>
                         <option value="career">Career & Job Placement</option>
                         <option value="resources">Free Guides & Resources</option>
+                        <option value="eligibility">Eligibility Check</option>
+                        <option value="training">Training Opportunities</option>
+                        <option value="courses">Personalized Course Recommendations</option>
+                        <option value="mbbs">MBBS Consultation</option>
+                        <option value="other">Other</option>
                       </select>
                     </div>
 

@@ -186,7 +186,7 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
                 Check Your Eligibility — FREE
               </Button>
             </Link>
-            <Link href="/contact?booking=true">
+            <Link href="/contact?interest=worldwide">
               <Button size="lg" className="bg-white hover:bg-blue-50 text-[#0c3463] rounded-full font-bold px-8 py-4 h-auto">
                 Book a Consultation
               </Button>

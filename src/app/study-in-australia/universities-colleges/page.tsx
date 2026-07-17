@@ -39,20 +39,57 @@ export default function UniversitiesColleges() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeFilter, setActiveFilter] = useState("all"); // all, universities, colleges
 
-  // Handle hash anchor routing on load
+  // Sync the active tab with the URL hash — on load AND whenever the hash
+  // changes while already on the page (e.g. selecting "Pathway Providers" vs
+  // "Universities" from the mega-menu, which only updates the hash and does not
+  // remount this component).
+  //
+  // The mega-menu links target #pathway / #universities on THIS same page. The
+  // Next.js App Router performs those as history.pushState navigations through
+  // its own patched history, which does NOT fire the native "hashchange" event.
+  // So we can't rely on hashchange alone: we also poll window.location.hash,
+  // which reflects the new value regardless of how the router navigated.
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    if (typeof window === "undefined") return;
+
+    let lastHash = window.location.hash;
+    const applyHash = (scroll: boolean) => {
       const hash = window.location.hash;
       if (hash === "#pathway") {
         setActiveFilter("colleges");
-        const el = document.getElementById("directory-section");
-        if (el) el.scrollIntoView({ behavior: "smooth" });
       } else if (hash === "#universities") {
         setActiveFilter("universities");
-        const el = document.getElementById("directory-section");
-        if (el) el.scrollIntoView({ behavior: "smooth" });
+      } else {
+        return;
       }
-    }
+      if (scroll) {
+        document
+          .getElementById("directory-section")
+          ?.scrollIntoView({ behavior: "smooth" });
+      }
+    };
+
+    // Initial load.
+    applyHash(true);
+
+    // Instant response for native hash changes / back-forward.
+    const onHashChange = () => applyHash(true);
+    window.addEventListener("hashchange", onHashChange);
+    window.addEventListener("popstate", onHashChange);
+
+    // Fallback for the App Router's pushState hash navigation (no hashchange).
+    const poll = window.setInterval(() => {
+      if (window.location.hash !== lastHash) {
+        lastHash = window.location.hash;
+        applyHash(true);
+      }
+    }, 120);
+
+    return () => {
+      window.removeEventListener("hashchange", onHashChange);
+      window.removeEventListener("popstate", onHashChange);
+      window.clearInterval(poll);
+    };
   }, []);
 
   const filteredUnis = universities.filter(uni => 
@@ -231,7 +268,7 @@ export default function UniversitiesColleges() {
                     </div>
                     <div className="pt-4 border-t border-slate-100 mt-4 flex items-center justify-between text-xs text-slate-400 font-medium relative z-10">
                       <span className="flex items-center gap-1"><MapPin className="w-3.5 h-3.5 text-[#124b8d]" /> Australia</span>
-                      <Link href="/contact" className="text-[#124b8d] hover:underline flex items-center gap-0.5 font-bold">Apply <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" /></Link>
+                      <Link href="/contact?interest=australia" className="text-[#124b8d] hover:underline flex items-center gap-0.5 font-bold">Apply <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" /></Link>
                     </div>
                   </motion.div>
                 ))}
@@ -261,7 +298,7 @@ export default function UniversitiesColleges() {
                     </div>
                     <div className="pt-4 border-t border-slate-100 mt-4 flex items-center justify-between text-xs text-slate-400 font-medium relative z-10">
                       <span className="flex items-center gap-1"><MapPin className="w-3.5 h-3.5 text-[#e31b23]" /> Australia</span>
-                      <Link href="/contact" className="text-[#e31b23] hover:underline flex items-center gap-0.5 font-bold">Apply <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" /></Link>
+                      <Link href="/contact?interest=australia" className="text-[#e31b23] hover:underline flex items-center gap-0.5 font-bold">Apply <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" /></Link>
                     </div>
                   </motion.div>
                 ))}
@@ -331,7 +368,7 @@ export default function UniversitiesColleges() {
                 Every placement is with a <strong>genuine, CRICOS-registered institution</strong> that protects your visa status and career goals.
               </p>
               <div className="pt-4">
-                <Link href="/contact">
+                <Link href="/contact?interest=australia">
                   <Button size="lg" className="bg-[#124b8d] hover:bg-[#0e3d72] text-white rounded-full font-bold shadow-[4px_4px_0px_rgba(15,23,42,1)] hover:shadow-none hover:translate-y-1 hover:translate-x-1 border-2 border-slate-900 transition-all duration-300">
                     Start Your Admissions Today
                   </Button>
